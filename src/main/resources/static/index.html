@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicPay People</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/autenticacao.css">
+</head>
+
+<body>
+<main class="pagina-autenticacao">
+    <section class="area-background"></section>
+    <section class="area-formulario">
+        <div class="card-autenticacao">
+            <div class="seletor-autenticacao">
+                <div class="indicador-seletor"></div>
+
+                <button class="botao-aba ativo" id="botaoLogin" type="button">Login</button>
+
+                <button class="botao-aba" id="botaoCadastro" type="button">Cadastrar-se</button>
+
+            </div>
+
+            <form class="formulario formulario-ativo" id="formularioLogin">
+                <div class="cabecalho-formulario">
+                    <h1>Bem-vindo de volta</h1>
+
+                    <p>
+                        Acesse sua conta para continuar no sistema de RH do PicPay.
+                    </p>
+
+                </div>
+
+                <div class="grupo-campo">
+
+                    <label for="emailLogin">
+                        E-mail corporativo
+                    </label>
+
+                    <div class="campo">
+
+                        <img src="./img/email.png" alt="" class="icone-campo">
+
+                        <input type="email" id="emailLogin" name="email" placeholder="seu.email@picpay.com" autocomplete="email"required>
+
+                    </div>
+
+                    <span class="mensagem-validacao">
+                        Informe um e-mail válido.
+                    </span>
+
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="senhaLogin">
+                        Senha
+                    </label>
+
+                    <div class="campo">
+
+                        <img src="./img/cadeado.png" alt="" class="icone-campo">
+
+                        <input type="password" id="senhaLogin" name="senha" placeholder="Digite sua senha" autocomplete="current-password" minlength="6" required>
+
+                        <button type="button" class="botao-olho" data-input="senhaLogin" aria-label="Mostrar senha">
+
+                            <img src="./img/olho-fechado.png" alt="" class="icone-olho">
+                        </button>
+                    </div>
+
+                    <span class="mensagem-validacao">
+                        A senha deve possuir pelo menos 6 caracteres.
+                    </span>
+
+                    <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="botao-principal">Login</button>
+                
+                <div class="divisor">
+                    <span></span>
+
+                    <p>OU</p>
+
+                    <span></span>
+                </div>
+
+                <button type="button" class="botao-google">
+
+                    <span>Continuar com</span>
+
+                    <img src="./img/google.png" alt="Google" class="imagem-google">
+                </button>
+
+            </form>
+
+            <form class="formulario" id="formularioCadastro">
+                <div class="cabecalho-formulario">
+
+                    <h1>Crie sua conta</h1>
+
+                    <p>
+                        Cadastre-se para acessar a plataforma de RH e gerenciar candidatos,
+                        processos seletivos e informações com segurança.
+                    </p>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="nomeCadastro">
+                        Nome completo
+                    </label>
+
+                    <div class="campo">
+
+                        <img src="./img/usuario.png" alt="" class="icone-campo">
+
+                        <input type="text" id="nomeCadastro" name="nome" placeholder="Digite seu nome" autocomplete="name" minlength="3" pattern="[A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)+" required>
+
+                    </div>
+
+                    <span class="mensagem-validacao">
+                        Digite seu nome completo.
+                    </span>
+
+                </div>
+
+                <div class="grupo-campo">
+
+                    <label for="emailCadastro">
+                        E-mail corporativo
+                    </label>
+
+                    <div class="campo">
+                        <img src="./img/email.png" alt="" class="icone-campo">
+
+                        <input type="email" id="emailCadastro" name="email" placeholder="seu.email@picpay.com" autocomplete="email" required>
+                    </div>
+
+                    <span class="mensagem-validacao">
+                        Informe um e-mail válido.
+                    </span>
+
+                </div>
+
+                <div class="grupo-campo">
+
+                    <label for="senhaCadastro">
+                        Senha
+                    </label>
+
+                    <div class="campo">
+
+                        <img src="./img/cadeado.png" alt="" class="icone-campo">
+
+                        <input type="password" id="senhaCadastro" name="senha" placeholder="Digite sua senha" autocomplete="new-password" minlength="8" required>
+
+                        <button type="button" class="botao-olho" data-input="senhaCadastro" aria-label="Mostrar senha">
+
+                            <img src="./img/olho-fechado.png" alt="" class="icone-olho">
+                        </button>
+
+                    </div>
+
+                    <span class="mensagem-validacao">
+                        A senha deve possuir pelo menos 8 caracteres.
+                    </span>
+
+                </div>
+
+                <div class="grupo-campo">
+
+                    <label for="confirmarSenhaCadastro">
+                        Confirmar senha
+                    </label>
+
+                    <div class="campo">
+
+                        <img src="./img/cadeado.png" alt="" class="icone-campo">
+
+                        <input type="password" id="confirmarSenhaCadastro" name="confirmarSenha" placeholder="Digite sua senha" autocomplete="new-password" minlength="8" required>
+
+                        <button type="button" class="botao-olho" data-input="confirmarSenhaCadastro" aria-label="Mostrar senha">
+
+                            <img src="./img/olho-fechado.png" alt="" class="icone-olho">
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-principal">Cadastrar-se</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script src="./js/autenticacao.js"></script>
+
+</body>
+</html>

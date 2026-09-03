@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indicadores | PicPay People</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/visao-geral.css">
+    <link rel="stylesheet" href="./css/indicadores.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-conteudo">
+
+            <div class="logo">
+
+                <img
+                    src="./img/plataform.png"
+                    alt="PicPay People Platform"
+                    class="logo-imagem"
+                >
+
+            </div>
+
+            <nav class="menu">
+
+                <a href="./visao-geral.html" class="menu-item">
+
+                    <img
+                        src="./img/home_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Visão geral</span>
+
+                </a>
+
+                <a href="./candidatos.html" class="menu-item">
+
+                    <img
+                        src="./img/user_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Candidatos</span>
+
+                </a>
+
+                <a href="./indicadores.html" class="menu-item ativo">
+
+                    <img
+                        src="./img/indicadores_icon_verde.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Indicadores</span>
+
+                </a>
+
+            </nav>
+
+            <div class="sidebar-glow"></div>
+
+            <div class="seguranca-card">
+
+                <div class="seguranca-topo">
+
+                    <div class="seguranca-icone">
+
+                        <img
+                            src="./img/cadeado_sidebar.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <h3>Ambiente seguro</h3>
+
+                        <p>
+                            Seus dados estão protegidos com
+                            criptografia de ponta a ponta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="seguranca-divisor"></div>
+
+                <a href="#" class="saiba-mais">
+
+                    <span>Saiba mais</span>
+
+                    <img
+                        src="./img/seta_direita_icon.png"
+                        alt=""
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="principal">
+
+        <header class="topbar">
+
+            <div class="saudacao">
+
+                <h2>
+                    <span id="periodoSaudacao">Bom dia</span>, <span id="nomeUsuario">Fulano</span>
+                    <span class="emoji">👋</span>
+                </h2>
+
+                <p>
+                    Aqui está a análise completa do seu processo seletivo.
+                </p>
+
+            </div>
+
+            <div class="topbar-acoes">
+
+                <button
+                    class="botao-notificacao"
+                    type="button"
+                    aria-label="Notificações"
+                >
+
+                    <img
+                        src="./img/notificacao_icon.png"
+                        alt=""
+                    >
+
+                    <span class="notificacao-indicador"></span>
+
+                </button>
+
+                <div class="separador-topbar"></div>
+
+                <div class="perfil-container">
+
+                    <button
+                        class="perfil"
+                        type="button"
+                        id="botaoPerfil"
+                        aria-expanded="false"
+                        aria-controls="perfilDropdown"
+                    >
+
+                        <div class="avatar">
+
+                            <img
+                                src="./img/user_icon_verde.png"
+                                alt=""
+                            >
+
+                        </div>
+
+                        <div class="perfil-textos">
+
+                            <strong id="nomePerfil">
+                                Fulano
+                            </strong>
+
+                            <span id="cargoPerfilTopo">
+                                People Partner
+                            </span>
+
+                        </div>
+
+                        <img
+                            src="./img/seta_baixo_icon.png"
+                            alt=""
+                            class="perfil-seta"
+                            id="setaPerfil"
+                        >
+
+                    </button>
+
+                    <div
+                        class="perfil-dropdown"
+                        id="perfilDropdown"
+                    >
+
+                        <button
+                            class="botao-editar-perfil"
+                            type="button"
+                            id="botaoEditarPerfil"
+                            aria-label="Editar perfil"
+                        >
+
+                            <img
+                                src="./img/editar_icon.png"
+                                alt=""
+                            >
+
+                        </button>
+
+                        <div class="perfil-dropdown-avatar">
+
+                            <img
+                                src="./img/user_icon_verde.png"
+                                alt=""
+                            >
+
+                        </div>
+
+                        <div class="perfil-dropdown-informacoes">
+
+                            <strong id="nomePerfilDropdown">
+                                Fulano
+                            </strong>
+
+                            <span
+                                class="perfil-dropdown-email"
+                                id="emailPerfilDropdown"
+                            >
+                                fulano@picpay.com
+                            </span>
+
+                            <span
+                                class="perfil-dropdown-cargo"
+                                id="cargoPerfilDropdown"
+                            >
+                                People Partner
+                            </span>
+
+                        </div>
+
+                        <div class="perfil-dropdown-divisor"></div>
+
+                        <button
+                            class="botao-sair"
+                            type="button"
+                            id="botaoSair"
+                        >
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="conteudo indicadores-pagina">
+
+            <div class="titulo-pagina">
+
+                <div>
+
+                    <h1>Indicadores</h1>
+
+                    <p>
+                        Acompanhe as principais métricas do seu processo seletivo em tempo real.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <section class="cards-indicadores">
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/candidatos_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Total de candidatos
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalCandidatos"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Total no processo seletivo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/analise_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Em análise
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalEmAnalise"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Aguardando avaliação
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/aprovado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Aprovados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalAprovados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Aprovados no processo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone vermelho">
+
+                        <img
+                            src="./img/reprovado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Reprovados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalReprovados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Encerrados no processo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/contratado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Contratados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalContratados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Contratações realizadas
+                    </span>
+
+                </article>
+
+            </section>
+
+            <section class="grade-graficos-principal">
+
+                <article class="card card-grafico card-status">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Distribuição por status</h2>
+
+                            <p>
+                                Visão geral da situação dos candidatos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="status-conteudo">
+
+                        <div class="donut-container">
+
+                            <canvas id="graficoStatus"></canvas>
+
+                            <div class="centro-donut">
+
+                                <strong id="totalCentro">
+                                    --
+                                </strong>
+
+                                <span>Total</span>
+
+                            </div>
+
+                            <div
+                                class="estado-grafico-vazio"
+                                id="vazioStatus"
+                            >
+                                Sem dados disponíveis
+                            </div>
+
+                        </div>
+
+                        <div class="legenda-grafico">
+
+                            <div class="legenda-linha">
+
+                                <span class="legenda-ponto azul"></span>
+
+                                <span>
+                                    Em análise
+                                </span>
+
+                                <strong id="legendaAnalise">
+                                    --
+                                </strong>
+
+                            </div>
+
+                            <div class="legenda-linha">
+
+                                <span class="legenda-ponto verde-escuro"></span>
+
+                                <span>
+                                    Aprovados
+                                </span>
+
+                                <strong id="legendaAprovados">
+                                    --
+                                </strong>
+
+                            </div>
+
+                            <div class="legenda-linha">
+
+                                <span class="legenda-ponto vermelho"></span>
+
+                                <span>
+                                    Reprovados
+                                </span>
+
+                                <strong id="legendaReprovados">
+                                    --
+                                </strong>
+
+                            </div>
+
+                            <div class="legenda-linha">
+
+                                <span class="legenda-ponto verde-claro"></span>
+
+                                <span>
+                                    Contratados
+                                </span>
+
+                                <strong id="legendaContratados">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="card card-grafico">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Candidatos por departamento</h2>
+
+                            <p>
+                                Departamentos com maior número de candidatos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="canvas-container">
+
+                        <canvas id="graficoDepartamentos"></canvas>
+
+                        <div
+                            class="estado-grafico-vazio"
+                            id="vazioDepartamentos"
+                        >
+                            Sem dados disponíveis
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="grade-graficos-secundaria">
+
+                <article class="card card-grafico">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Cargos com mais candidatos</h2>
+
+                            <p>
+                                Posições com maior quantidade de candidaturas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="canvas-container">
+
+                        <canvas id="graficoCargos"></canvas>
+
+                        <div
+                            class="estado-grafico-vazio"
+                            id="vazioCargos"
+                        >
+                            Sem dados disponíveis
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="card card-grafico">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Candidatos por cidade</h2>
+
+                            <p>
+                                Distribuição dos candidatos por localização.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="canvas-container">
+
+                        <canvas id="graficoCidades"></canvas>
+
+                        <div
+                            class="estado-grafico-vazio"
+                            id="vazioCidades"
+                        >
+                            Sem dados disponíveis
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="grade-graficos-final">
+
+                <article class="card card-grafico card-salarios">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Salário médio por departamento</h2>
+
+                            <p>
+                                Média salarial dos candidatos de cada área.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="canvas-container">
+
+                        <canvas id="graficoSalarios"></canvas>
+
+                        <div
+                            class="estado-grafico-vazio"
+                            id="vazioSalarios"
+                        >
+                            Sem dados disponíveis
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="card resumo-indicadores-card">
+
+                    <div class="cabecalho-grafico">
+
+                        <div>
+
+                            <h2>Resumo dos indicadores</h2>
+
+                            <p>
+                                Principais taxas do processo seletivo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="resumo-indicadores-grid">
+
+                        <div class="resumo-metrica">
+
+                            <div class="resumo-metrica-icone">
+                                %
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Taxa de aprovação
+                                </span>
+
+                                <strong id="taxaAprovacao">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="resumo-metrica">
+
+                            <div class="resumo-metrica-icone">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Taxa de contratação
+                                </span>
+
+                                <strong id="taxaContratacao">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="resumo-metrica">
+
+                            <div class="resumo-metrica-icone moeda">
+                                R$
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Salário médio
+                                </span>
+
+                                <strong id="salarioMedio">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="resumo-metrica">
+
+                            <div class="resumo-metrica-icone">
+                                #
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Departamentos
+                                </span>
+
+                                <strong id="quantidadeDepartamentos">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="./js/indicadores.js"></script>
+</body>
+</html>

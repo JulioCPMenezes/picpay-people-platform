@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visão Geral | PicPay People</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/visao-geral.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-conteudo">
+
+            <div class="logo">
+                <img
+                    src="./img/plataform.png"
+                    alt="PicPay People Platform"
+                    class="logo-imagem"
+                >
+            </div>
+
+            <nav class="menu">
+
+                <a href="./visao-geral.html" class="menu-item ativo">
+
+                    <img
+                        src="./img/home_icon_verde.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Visão geral</span>
+
+                </a>
+
+                <a href="./candidatos.html" class="menu-item">
+
+                    <img
+                        src="./img/user_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Candidatos</span>
+
+                </a>
+
+                <a href="./indicadores.html" class="menu-item">
+
+                    <img
+                        src="./img/indicadores_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+
+                    <span>Indicadores</span>
+
+                </a>
+
+            </nav>
+
+            <div class="sidebar-glow"></div>
+
+            <div class="seguranca-card">
+
+                <div class="seguranca-topo">
+
+                    <div class="seguranca-icone">
+
+                        <img
+                            src="./img/cadeado_sidebar.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <h3>Ambiente seguro</h3>
+
+                        <p>
+                            Seus dados estão protegidos com
+                            criptografia de ponta a ponta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="seguranca-divisor"></div>
+
+                <a href="#" class="saiba-mais">
+
+                    <span>Saiba mais</span>
+
+                    <img
+                        src="./img/seta_direita_icon.png"
+                        alt=""
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="principal">
+
+        <header class="topbar">
+
+            <div class="saudacao">
+
+                <h2>
+                    <span id="periodoSaudacao">Bom dia</span>, <span id="nomeUsuario">Fulano</span>
+                    <span class="emoji">👋</span>
+                </h2>
+
+                <p>Aqui está o resumo do seu processo seletivo hoje.</p>
+
+            </div>
+
+            <div class="topbar-acoes">
+
+                <button
+                    class="botao-notificacao"
+                    type="button"
+                    aria-label="Notificações"
+                >
+
+                    <img
+                        src="./img/notificacao_icon.png"
+                        alt=""
+                    >
+
+                    <span class="notificacao-indicador"></span>
+
+                </button>
+
+                <div class="separador-topbar"></div>
+
+                <button
+                    class="perfil"
+                    type="button"
+                    id="botaoPerfil"
+                >
+
+                    <div class="avatar">
+
+                        <img
+                            src="./img/user_icon_verde.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div class="perfil-textos">
+
+                        <strong id="nomePerfil">Fulano</strong>
+
+                        <span>People Partner</span>
+
+                    </div>
+
+                    <img
+                        src="./img/seta_baixo_icon.png"
+                        alt=""
+                        class="perfil-seta"
+                    >
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="conteudo">
+
+            <div class="titulo-pagina">
+
+                <div>
+
+                    <h1>Visão geral</h1>
+
+                    <p>
+                        Acompanhe o desempenho do seu processo seletivo em tempo real.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <section class="cards-indicadores">
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/candidatos_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Total de candidatos
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalCandidatos"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Total no processo seletivo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/analise_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Em análise
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalEmAnalise"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Aguardando avaliação
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/aprovado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Aprovados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalAprovados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Aprovados no processo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone vermelho">
+
+                        <img
+                            src="./img/reprovado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Reprovados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalReprovados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Encerrados no processo
+                    </span>
+
+                </article>
+
+                <article class="card-indicador">
+
+                    <div class="indicador-icone verde">
+
+                        <img
+                            src="./img/contratado_icon.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <span class="indicador-label">
+                        Contratados
+                    </span>
+
+                    <strong
+                        class="indicador-valor"
+                        id="totalContratados"
+                    >
+                        --
+                    </strong>
+
+                    <span class="indicador-descricao">
+                        Contratações realizadas
+                    </span>
+
+                </article>
+
+            </section>
+
+            <section class="dashboard-inferior">
+
+                <article class="card candidatos-recentes">
+
+                    <div class="card-header">
+
+                        <h2>Candidatos recentes</h2>
+
+                        <a
+                            href="./candidatos.html"
+                            class="botao-ver-todos"
+                        >
+
+                            <span>Ver todos</span>
+
+                            <img
+                                src="./img/seta_direita_preta.png"
+                                alt=""
+                            >
+
+                        </a>
+
+                    </div>
+
+                    <div class="tabela-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Candidato</th>
+                                    <th>Cargo</th>
+                                    <th>Departamento</th>
+                                    <th>Status</th>
+                                    <th>Atualizado em</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tabelaCandidatos">
+
+                                <tr class="linha-vazia">
+
+                                    <td colspan="5">
+
+                                        <div class="estado-vazio">
+
+                                            <div class="estado-vazio-icone">
+
+                                                <img
+                                                    src="./img/user_icon_verde.png"
+                                                    alt=""
+                                                >
+
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Nenhum candidato carregado
+                                                </strong>
+
+                                                <p>
+                                                    Os candidatos aparecerão aqui
+                                                    quando os dados forem carregados.
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </article>
+
+                <div class="coluna-direita">
+
+                    <article class="card distribuicao">
+
+                        <h2>Distribuição por status</h2>
+
+                        <div class="grafico-conteudo">
+
+                            <div class="grafico-donut">
+
+                                <div class="grafico-centro">
+
+                                    <strong id="graficoTotal">--</strong>
+
+                                    <span>Total</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="legenda">
+
+                                <div class="legenda-item">
+
+                                    <span class="ponto azul"></span>
+
+                                    <span>Em análise</span>
+
+                                    <strong id="graficoEmAnalise">--</strong>
+
+                                </div>
+
+                                <div class="legenda-item">
+
+                                    <span class="ponto verde"></span>
+
+                                    <span>Aprovados</span>
+
+                                    <strong id="graficoAprovados">--</strong>
+
+                                </div>
+
+                                <div class="legenda-item">
+
+                                    <span class="ponto vermelho"></span>
+
+                                    <span>Reprovados</span>
+
+                                    <strong id="graficoReprovados">--</strong>
+
+                                </div>
+
+                                <div class="legenda-item">
+
+                                    <span class="ponto verde-claro"></span>
+
+                                    <span>Contratados</span>
+
+                                    <strong id="graficoContratados">--</strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card acoes-rapidas">
+
+                        <h2>Ações rápidas</h2>
+
+                        <a
+                            href="./candidatos.html"
+                            class="acao-item"
+                        >
+
+                            <div class="acao-conteudo">
+
+                                <img
+                                    src="./img/user_icon_verde.png"
+                                    alt=""
+                                >
+
+                                <span>Cadastrar novo candidato</span>
+
+                            </div>
+
+                            <img
+                                src="./img/seta_direita_icon.png"
+                                alt=""
+                                class="acao-seta"
+                            >
+
+                        </a>
+
+                        <a
+                            href="./candidatos.html"
+                            class="acao-item"
+                        >
+
+                            <div class="acao-conteudo">
+
+                                <img
+                                    src="./img/candidatos_icon.png"
+                                    alt=""
+                                >
+
+                                <span>Consultar candidatos</span>
+
+                            </div>
+
+                            <img
+                                src="./img/seta_direita_icon.png"
+                                alt=""
+                                class="acao-seta"
+                            >
+
+                        </a>
+
+                        <a
+                            href="./candidatos.html"
+                            class="acao-item"
+                        >
+
+                            <div class="acao-conteudo">
+
+                                <img
+                                    src="./img/analise_icon.png"
+                                    alt=""
+                                >
+
+                                <span>Atualização rápida</span>
+
+                            </div>
+
+                            <img
+                                src="./img/seta_direita_icon.png"
+                                alt=""
+                                class="acao-seta"
+                            >
+
+                        </a>
+
+                        <a
+                            href="./indicadores.html"
+                            class="acao-item"
+                        >
+
+                            <div class="acao-conteudo">
+
+                                <img
+                                    src="./img/indicadores_icon_verde.png"
+                                    alt=""
+                                >
+
+                                <span>Visualizar indicadores</span>
+
+                            </div>
+
+                            <img src="./img/seta_direita_icon.png" alt="" class="acao-seta">
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+</div>
+
+<script src="./js/visao-geral.js"></script>
+</body>
+</html>

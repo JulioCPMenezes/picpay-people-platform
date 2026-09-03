@@ -155,37 +155,100 @@
 
                 <div class="separador-topbar"></div>
 
-                <button
-                    class="perfil"
-                    type="button"
-                    id="botaoPerfil"
-                >
+                <div class="perfil-container">
 
-                    <div class="avatar">
-
-                        <img
-                            src="./img/user_icon_verde.png"
-                            alt=""
-                        >
-
-                    </div>
-
-                    <div class="perfil-textos">
-
-                        <strong id="nomePerfil">Fulano</strong>
-
-                        <span>People Partner</span>
-
-                    </div>
-
-                    <img
-                        src="./img/seta_baixo_icon.png"
-                        alt=""
-                        class="perfil-seta"
+                    <button
+                        class="perfil"
+                        type="button"
+                        id="botaoPerfil"
+                        aria-expanded="false"
+                        aria-controls="perfilDropdown"
                     >
-
-                </button>
-
+                
+                        <div class="avatar">
+                
+                            <img
+                                src="./img/user_icon_verde.png"
+                                alt=""
+                            >
+                
+                        </div>
+                
+                        <div class="perfil-textos">
+                
+                            <strong id="nomePerfil">Fulano</strong>
+                
+                            <span id="cargoPerfilTopo">People Partner</span>
+                
+                        </div>
+                
+                        <img
+                            src="./img/seta_baixo_icon.png"
+                            alt=""
+                            class="perfil-seta"
+                            id="setaPerfil"
+                        >
+                
+                    </button>
+                
+                    <div
+                        class="perfil-dropdown"
+                        id="perfilDropdown"
+                    >
+                
+                        <button
+                            class="botao-editar-perfil"
+                            type="button"
+                            id="botaoEditarPerfil"
+                            aria-label="Editar perfil"
+                        >
+                
+                            <img
+                                src="./img/editar_icon.png"
+                                alt=""
+                            >
+                
+                        </button>
+                
+                        <div class="perfil-dropdown-avatar">
+                
+                            <img
+                                src="./img/user_icon_verde.png"
+                                alt=""
+                            >
+                
+                        </div>
+                
+                        <div class="perfil-dropdown-informacoes">
+                
+                            <strong id="nomePerfilDropdown">
+                                Fulano
+                            </strong>
+                
+                            <span
+                                class="perfil-dropdown-email"
+                                id="emailPerfilDropdown"
+                            >
+                                fulano@picpay.com
+                            </span>
+                
+                            <span
+                                class="perfil-dropdown-cargo"
+                                id="cargoPerfilDropdown"
+                            >
+                                People Partner
+                            </span>
+                
+                        </div>
+                
+                        <div class="perfil-dropdown-divisor"></div>
+                
+                        <button
+                            class="botao-sair"
+                            type="button" id="botaoSair">Sair
+                        </button>
+                    </div>
+                </div>
             </div>
 
         </header>

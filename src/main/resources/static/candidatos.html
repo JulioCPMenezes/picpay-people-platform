@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Candidatos | PicPay People</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/visao-geral.css">
+    <link rel="stylesheet" href="./css/candidatos.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-conteudo">
+
+            <div class="logo">
+                <img
+                    src="./img/plataform.png"
+                    alt="PicPay People Platform"
+                    class="logo-imagem"
+                >
+            </div>
+
+            <nav class="menu">
+
+                <a href="./visao-geral.html" class="menu-item">
+                    <img
+                        src="./img/home_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+                    <span>Visão geral</span>
+                </a>
+
+                <a href="./candidatos.html" class="menu-item ativo">
+                    <img
+                        src="./img/user_icon_verde.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+                    <span>Candidatos</span>
+                </a>
+
+                <a href="./indicadores.html" class="menu-item">
+                    <img
+                        src="./img/indicadores_icon_branco.png"
+                        alt=""
+                        class="menu-icone"
+                    >
+                    <span>Indicadores</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-glow"></div>
+
+            <div class="seguranca-card">
+
+                <div class="seguranca-topo">
+
+                    <div class="seguranca-icone">
+                        <img src="./img/cadeado_sidebar.png" alt="">
+                    </div>
+
+                    <div>
+                        <h3>Ambiente seguro</h3>
+                        <p>
+                            Seus dados estão protegidos com
+                            criptografia de ponta a ponta.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="seguranca-divisor"></div>
+
+                <a href="#" class="saiba-mais">
+                    <span>Saiba mais</span>
+                    <img src="./img/seta_direita_icon.png" alt="">
+                </a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="principal">
+
+        <header class="topbar">
+
+            <div class="saudacao">
+
+                <h2>
+                    <span id="periodoSaudacao">Bom dia</span>, <span id="nomeUsuario">Fulano</span>
+                    <span class="emoji">👋</span>
+                </h2>
+
+                <p>
+                    Aqui está a lista completa de candidatos do seu processo seletivo.
+                </p>
+
+            </div>
+
+            <div class="topbar-acoes">
+
+                <button
+                    class="botao-notificacao"
+                    type="button"
+                    aria-label="Notificações"
+                >
+                    <img src="./img/notificacao_icon.png" alt="">
+                    <span class="notificacao-indicador"></span>
+                </button>
+
+                <div class="separador-topbar"></div>
+
+                <div class="perfil-container">
+
+                    <button
+                        class="perfil"
+                        type="button"
+                        id="botaoPerfil"
+                        aria-expanded="false"
+                    >
+
+                        <div class="avatar">
+                            <img src="./img/user_icon_verde.png" alt="">
+                        </div>
+
+                        <div class="perfil-textos">
+                            <strong id="nomePerfil">Fulano</strong>
+                            <span>People Partner</span>
+                        </div>
+
+                        <img
+                            src="./img/seta_baixo_icon.png"
+                            alt=""
+                            class="perfil-seta"
+                        >
+
+                    </button>
+
+                    <div
+                        class="perfil-dropdown"
+                        id="perfilDropdown"
+                    >
+
+                        <button
+                            class="botao-editar-perfil"
+                            type="button"
+                        >
+                            <img src="./img/editar_icon.png" alt="">
+                        </button>
+
+                        <div class="perfil-dropdown-avatar">
+                            <img src="./img/user_icon_verde.png" alt="">
+                        </div>
+
+                        <div class="perfil-dropdown-informacoes">
+
+                            <strong>Fulano</strong>
+
+                            <span class="perfil-dropdown-email">
+                                fulano@picpay.com
+                            </span>
+
+                            <span class="perfil-dropdown-cargo">
+                                People Partner
+                            </span>
+
+                        </div>
+
+                        <div class="perfil-dropdown-divisor"></div>
+
+                        <button
+                            class="botao-sair"
+                            type="button"
+                            id="botaoSair"
+                        >
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="conteudo candidatos-conteudo">
+
+            <div class="candidatos-cabecalho">
+
+                <div>
+
+                    <h1>Gestão de candidatos</h1>
+
+                    <p>
+                        Organize e acompanhe todos os candidatos do seu processo seletivo.
+                    </p>
+
+                </div>
+
+                <button
+                    class="botao-novo-candidato"
+                    type="button"
+                    id="botaoNovoCandidato"
+                >
+                    <span class="sinal-mais">+</span>
+                    Novo candidato
+                </button>
+
+            </div>
+
+            <div class="resumo-status">
+
+                <button
+                    class="resumo-item ativo"
+                    type="button"
+                    data-resumo-status=""
+                >
+                    <span>Todos</span>
+                    <strong id="resumoTodos">--</strong>
+                </button>
+
+                <button
+                    class="resumo-item"
+                    type="button"
+                    data-resumo-status="EM_ANALISE"
+                >
+                    <span>Em análise</span>
+                    <strong id="resumoAnalise">--</strong>
+                </button>
+
+                <button
+                    class="resumo-item"
+                    type="button"
+                    data-resumo-status="APROVADO"
+                >
+                    <span>Aprovados</span>
+                    <strong id="resumoAprovados">--</strong>
+                </button>
+
+                <button
+                    class="resumo-item"
+                    type="button"
+                    data-resumo-status="REPROVADO"
+                >
+                    <span>Reprovados</span>
+                    <strong id="resumoReprovados">--</strong>
+                </button>
+
+                <button
+                    class="resumo-item"
+                    type="button"
+                    data-resumo-status="CONTRATADO"
+                >
+                    <span>Contratados</span>
+                    <strong id="resumoContratados">--</strong>
+                </button>
+
+            </div>
+
+            <section class="card-listagem">
+
+                <div class="barra-filtros">
+
+                    <div class="campo-pesquisa">
+
+                        <img src="./img/buscar_icon.png" alt="">
+
+                        <input
+                            type="search"
+                            id="campoPesquisa"
+                            placeholder="Buscar por nome, e-mail ou cargo..."
+                        >
+
+                    </div>
+
+                    <select id="filtroStatus" class="filtro-select">
+                        <option value="">Status</option>
+                        <option value="EM_ANALISE">Em análise</option>
+                        <option value="APROVADO">Aprovado</option>
+                        <option value="REPROVADO">Reprovado</option>
+                        <option value="CONTRATADO">Contratado</option>
+                    </select>
+
+                    <select
+                        id="filtroDepartamento"
+                        class="filtro-select"
+                    >
+                        <option value="">Departamento</option>
+                    </select>
+
+                    <select
+                        id="filtroCidade"
+                        class="filtro-select"
+                    >
+                        <option value="">Cidade</option>
+                    </select>
+
+                    <button
+                        type="button"
+                        class="botao-limpar"
+                        id="botaoLimparFiltros"
+                    >
+                        Limpar filtros
+                    </button>
+
+                </div>
+
+                <div class="tabela-candidatos-wrapper">
+
+                    <table class="tabela-candidatos">
+
+                        <thead>
+
+                            <tr>
+                                <th>Candidato</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>Cargo</th>
+                                <th>Departamento</th>
+                                <th>Cidade</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="corpoTabelaCandidatos"></tbody>
+
+                    </table>
+
+                    <div
+                        class="candidatos-vazio"
+                        id="candidatosVazio"
+                    >
+
+                        <div class="candidatos-vazio-icone">
+                            <img src="./img/user_icon_verde.png" alt="">
+                        </div>
+
+                        <h3>Nenhum candidato encontrado</h3>
+
+                        <p>
+                            Os candidatos aparecerão aqui quando forem cadastrados.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="paginacao">
+
+                    <span id="textoPaginacao">
+                        Nenhum candidato carregado
+                    </span>
+
+                    <div class="paginacao-controles">
+
+                        <button
+                            type="button"
+                            class="pagina-seta"
+                            id="paginaAnterior"
+                        >
+                            ‹
+                        </button>
+
+                        <span
+                            class="pagina-atual"
+                            id="paginaAtual"
+                        >
+                            1
+                        </span>
+
+                        <button
+                            type="button"
+                            class="pagina-seta"
+                            id="proximaPagina"
+                        >
+                            ›
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div
+    class="menu-acoes-flutuante"
+    id="menuAcoesFlutuante"
+>
+
+    <button
+        class="menu-opcao"
+        type="button"
+        data-acao="detalhes"
+    >
+        <img src="./img/olho_icon.png" alt="">
+        Ver detalhes
+    </button>
+
+    <button
+        class="menu-opcao"
+        type="button"
+        data-acao="editar"
+    >
+        <img src="./img/editar_icon.png" alt="">
+        Editar cadastro
+    </button>
+
+    <button
+        class="menu-opcao"
+        type="button"
+        data-acao="rapida"
+    >
+        <img src="./img/raio_icon.png" alt="">
+        Atualização rápida
+    </button>
+
+    <button
+        class="menu-opcao"
+        type="button"
+        data-acao="curriculo"
+    >
+        <img src="./img/documento_icon.png" alt="">
+        Abrir currículo
+    </button>
+
+    <button
+        class="menu-opcao excluir"
+        type="button"
+        data-acao="excluir"
+    >
+        <img src="./img/lixeira_icon.png" alt="">
+        Excluir candidato
+    </button>
+
+</div>
+
+<div
+    class="overlay-modal"
+    id="overlayModal"
+></div>
+
+<aside
+    class="drawer"
+    id="drawerNovo"
+>
+
+    <div class="drawer-cabecalho">
+
+        <div>
+
+            <h2>Novo candidato</h2>
+
+            <p>
+                Preencha os dados para cadastrar um novo candidato no processo seletivo.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="botao-fechar"
+            data-fechar
+        >
+            ×
+        </button>
+
+    </div>
+
+    <form
+        id="formNovoCandidato"
+        class="drawer-form"
+    >
+
+        <div class="drawer-corpo">
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/user_icon_verde.png" alt="">
+
+                    <h3>Dados pessoais</h3>
+
+                </div>
+
+                <div class="grade-formulario">
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoNome">
+                            Nome completo <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoNome"
+                            type="text"
+                            placeholder="Ex.: Mariana Souza Silva"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoCpf">
+                            CPF <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoCpf"
+                            type="text"
+                            inputmode="numeric"
+                            placeholder="000.000.000-00"
+                            maxlength="14"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoEmail">
+                            E-mail <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoEmail"
+                            type="email"
+                            placeholder="ex.: mariana@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoTelefone">
+                            Telefone <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoTelefone"
+                            type="tel"
+                            inputmode="numeric"
+                            placeholder="(11) 99999-9999"
+                            maxlength="15"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario grupo-cidade">
+
+                        <label for="novaCidade">
+                            Cidade <span>*</span>
+                        </label>
+
+                        <input
+                            id="novaCidade"
+                            type="text"
+                            placeholder="Ex.: São Paulo"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario grupo-estado">
+
+                        <label for="novoEstado">
+                            Estado <span>*</span>
+                        </label>
+
+                        <select
+                            id="novoEstado"
+                            required
+                        >
+                            <option value="">
+                                UF
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/contratado_icon.png" alt="">
+
+                    <h3>Informações profissionais</h3>
+
+                </div>
+
+                <div class="grade-formulario">
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoCargo">
+                            Cargo <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoCargo"
+                            type="text"
+                            placeholder="Digite o cargo"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoDepartamento">
+                            Departamento <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoDepartamento"
+                            type="text"
+                            placeholder="Digite o departamento"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoSalario">
+                            Salário <span>*</span>
+                        </label>
+
+                        <input
+                            id="novoSalario"
+                            type="text"
+                            inputmode="numeric"
+                            placeholder="R$ 0,00"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="novoStatus">
+                            Status <span>*</span>
+                        </label>
+
+                        <select
+                            id="novoStatus"
+                            required
+                        >
+                            <option value="">
+                                Selecione o status
+                            </option>
+
+                            <option value="EM_ANALISE">
+                                Em análise
+                            </option>
+
+                            <option value="APROVADO">
+                                Aprovado
+                            </option>
+
+                            <option value="REPROVADO">
+                                Reprovado
+                            </option>
+
+                            <option value="CONTRATADO">
+                                Contratado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/documento_icon.png" alt="">
+
+                    <h3>Currículo</h3>
+
+                </div>
+
+                <div
+                    class="area-upload"
+                    id="areaUploadNovo"
+                >
+
+                    <input
+                        type="file"
+                        id="curriculoNovo"
+                        accept=".pdf,application/pdf"
+                        hidden
+                    >
+
+                    <img
+                        src="./img/upload_icon.png"
+                        alt=""
+                        class="upload-icone"
+                    >
+
+                    <strong>
+                        Arraste e solte seu arquivo aqui ou
+                        <span>clique para selecionar</span>
+                    </strong>
+
+                    <p>
+                        Apenas arquivos PDF até 10MB
+                    </p>
+
+                    <div
+                        class="arquivo-selecionado"
+                        id="arquivoNovoSelecionado"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="drawer-rodape">
+
+            <button
+                type="button"
+                class="botao-secundario"
+                data-fechar
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="botao-verde"
+            >
+                Cadastrar candidato
+            </button>
+
+        </div>
+
+    </form>
+
+</aside>
+
+<aside
+    class="drawer"
+    id="drawerDetalhes"
+>
+
+    <div class="drawer-cabecalho">
+
+        <div>
+
+            <h2>Detalhes do candidato</h2>
+
+            <p>
+                Visualize todas as informações cadastradas.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="botao-fechar"
+            data-fechar
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="drawer-corpo">
+
+        <div class="detalhes-perfil">
+
+            <div class="detalhes-avatar">
+                <img src="./img/user_icon_verde.png" alt="">
+            </div>
+
+            <h3 id="detalheNome">
+                --
+            </h3>
+
+            <p id="detalheCargo">
+                --
+            </p>
+
+            <span
+                class="status-badge"
+                id="detalheStatus"
+            >
+                --
+            </span>
+
+        </div>
+
+        <section class="detalhes-secao">
+
+            <h3>Informações pessoais</h3>
+
+            <div class="detalhes-grade">
+
+                <div>
+                    <span>CPF</span>
+                    <strong id="detalheCpf">--</strong>
+                </div>
+
+                <div>
+                    <span>E-mail</span>
+                    <strong id="detalheEmail">--</strong>
+                </div>
+
+                <div>
+                    <span>Telefone</span>
+                    <strong id="detalheTelefone">--</strong>
+                </div>
+
+                <div>
+                    <span>Cidade</span>
+                    <strong id="detalheCidade">--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="detalhes-secao">
+
+            <h3>Informações profissionais</h3>
+
+            <div class="detalhes-grade">
+
+                <div>
+                    <span>Cargo</span>
+                    <strong id="detalheCargoCompleto">--</strong>
+                </div>
+
+                <div>
+                    <span>Departamento</span>
+                    <strong id="detalheDepartamento">--</strong>
+                </div>
+
+                <div>
+                    <span>Salário</span>
+                    <strong id="detalheSalario">--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="detalhes-secao">
+
+            <h3>Currículo</h3>
+
+            <button
+                type="button"
+                class="botao-curriculo"
+                id="botaoAbrirCurriculoDetalhes"
+            >
+
+                <img src="./img/documento_icon.png" alt="">
+
+                <span id="nomeCurriculoDetalhes">
+                    Visualizar currículo
+                </span>
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <div class="drawer-rodape">
+
+        <button
+            type="button"
+            class="botao-secundario"
+            id="botaoAtualizacaoDetalhes"
+        >
+            Atualização rápida
+        </button>
+
+        <button
+            type="button"
+            class="botao-verde"
+            id="botaoEditarDetalhes"
+        >
+            Editar cadastro
+        </button>
+
+    </div>
+
+</aside>
+
+<aside
+    class="drawer"
+    id="drawerEditar"
+>
+
+    <div class="drawer-cabecalho">
+
+        <div>
+
+            <h2>Editar candidato</h2>
+
+            <p>
+                Edite todos os dados do candidato.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="botao-fechar"
+            data-fechar
+        >
+            ×
+        </button>
+
+    </div>
+
+    <form
+        id="formEditarCandidato"
+        class="drawer-form"
+    >
+
+        <div class="drawer-corpo">
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/user_icon_verde.png" alt="">
+
+                    <h3>Dados pessoais</h3>
+
+                </div>
+
+                <div class="grade-formulario">
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarNome">
+                            Nome completo
+                        </label>
+
+                        <input
+                            id="editarNome"
+                            type="text"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarCpf">
+                            CPF
+                        </label>
+
+                        <input
+                            id="editarCpf"
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="14"
+                            placeholder="000.000.000-00"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            id="editarEmail"
+                            type="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarTelefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            id="editarTelefone"
+                            type="tel"
+                            inputmode="numeric"
+                            maxlength="15"
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario grupo-cidade">
+
+                        <label for="editarCidade">
+                            Cidade
+                        </label>
+
+                        <input
+                            id="editarCidade"
+                            type="text"
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario grupo-estado">
+
+                        <label for="editarEstado">
+                            Estado
+                        </label>
+
+                        <select id="editarEstado">
+
+                            <option value="">
+                                UF
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/contratado_icon.png" alt="">
+
+                    <h3>Informações profissionais</h3>
+
+                </div>
+
+                <div class="grade-formulario">
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarCargo">
+                            Cargo
+                        </label>
+
+                        <input
+                            id="editarCargo"
+                            type="text"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarDepartamento">
+                            Departamento
+                        </label>
+
+                        <input
+                            id="editarDepartamento"
+                            type="text"
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarSalario">
+                            Salário
+                        </label>
+
+                        <input
+                            id="editarSalario"
+                            type="text"
+                            inputmode="numeric"
+                            placeholder="R$ 0,00"
+                        >
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="editarStatus">
+                            Status
+                        </label>
+
+                        <select id="editarStatus">
+
+                            <option value="EM_ANALISE">
+                                Em análise
+                            </option>
+
+                            <option value="APROVADO">
+                                Aprovado
+                            </option>
+
+                            <option value="REPROVADO">
+                                Reprovado
+                            </option>
+
+                            <option value="CONTRATADO">
+                                Contratado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="secao-formulario">
+
+                <div class="secao-titulo">
+
+                    <img src="./img/documento_icon.png" alt="">
+
+                    <h3>Currículo</h3>
+
+                </div>
+
+                <input
+                    type="file"
+                    id="curriculoEditar"
+                    accept=".pdf,application/pdf"
+                    hidden
+                >
+
+                <div class="arquivo-edicao">
+
+                    <div>
+
+                        <img src="./img/documento_icon.png" alt="">
+
+                        <span id="arquivoEditarNome">
+                            Nenhum currículo
+                        </span>
+
+                    </div>
+
+                    <div class="arquivo-edicao-acoes">
+
+                        <button
+                            type="button"
+                            class="botao-substituir-arquivo"
+                            id="botaoSubstituirCurriculo"
+                        >
+                            Substituir
+                        </button>
+
+                        <button
+                            type="button"
+                            class="botao-remover-arquivo"
+                            id="removerCurriculoEditar"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="drawer-rodape">
+
+            <button
+                type="button"
+                class="botao-secundario"
+                data-fechar
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="botao-verde"
+            >
+                Salvar alterações
+            </button>
+
+        </div>
+
+    </form>
+
+</aside>
+
+<div
+    class="modal-central"
+    id="modalAtualizacao"
+>
+
+    <div class="modal-central-cabecalho">
+
+        <div>
+
+            <h2>Atualização rápida</h2>
+
+            <p>
+                Atualize apenas os campos necessários.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="botao-fechar"
+            data-fechar
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="identidade-candidato">
+
+        <div class="identidade-avatar">
+            <img src="./img/user_icon_verde.png" alt="">
+        </div>
+
+        <div>
+
+            <strong id="rapidoNome">
+                --
+            </strong>
+
+            <span id="rapidoCargoAtual">
+                --
+            </span>
+
+        </div>
+
+    </div>
+
+    <form id="formAtualizacaoRapida">
+
+        <div class="grupo-formulario largura-total">
+
+            <label for="rapidoCargo">
+                Cargo
+            </label>
+
+            <input
+                type="text"
+                id="rapidoCargo"
+            >
+
+        </div>
+
+        <div class="grupo-formulario largura-total">
+
+            <label for="rapidoStatus">
+                Status
+            </label>
+
+            <select id="rapidoStatus">
+
+                <option value="EM_ANALISE">
+                    Em análise
+                </option>
+
+                <option value="APROVADO">
+                    Aprovado
+                </option>
+
+                <option value="REPROVADO">
+                    Reprovado
+                </option>
+
+                <option value="CONTRATADO">
+                    Contratado
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="grupo-formulario largura-total">
+
+            <label for="rapidoSalario">
+                Salário
+            </label>
+
+            <input
+                type="text"
+                id="rapidoSalario"
+                inputmode="numeric"
+                placeholder="R$ 0,00"
+            >
+
+        </div>
+
+        <div class="modal-botoes">
+
+            <button
+                type="button"
+                class="botao-secundario"
+                data-fechar
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="botao-verde"
+            >
+                Salvar alterações
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+<div
+    class="modal-curriculo"
+    id="modalCurriculo"
+>
+
+    <div
+        class="curriculo-cabecalho"
+        id="curriculoCabecalho"
+    >
+
+        <div>
+
+            <h2 id="curriculoTitulo">
+                Currículo
+            </h2>
+
+            <span id="curriculoNomeArquivo">
+                documento.pdf
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            class="botao-fechar"
+            data-fechar
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="curriculo-conteudo">
+
+        <iframe
+            id="curriculoFrame"
+            title="Currículo do candidato"
+        ></iframe>
+
+        <div
+            class="curriculo-vazio"
+            id="curriculoVazio"
+        >
+
+            <img src="./img/documento_icon.png" alt="">
+
+            <strong>Currículo não disponível</strong>
+
+            <p>
+                O arquivo aparecerá aqui quando estiver disponível.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal-central modal-exclusao"
+    id="modalExclusao"
+>
+
+    <div class="icone-exclusao">
+        <img src="./img/lixeira_icon.png" alt="">
+    </div>
+
+    <h2>
+        Excluir candidato?
+    </h2>
+
+    <p>
+        Tem certeza que deseja excluir
+        <strong id="nomeCandidatoExclusao">
+            este candidato
+        </strong>?
+        Esta ação não poderá ser desfeita.
+    </p>
+
+    <div class="modal-botoes">
+
+        <button
+            type="button"
+            class="botao-secundario"
+            data-fechar
+        >
+            Cancelar
+        </button>
+
+        <button
+            type="button"
+            class="botao-excluir"
+            id="confirmarExclusao"
+        >
+            Excluir candidato
+        </button>
+    </div>
+</div>
+<script src="./js/candidatos.js"></script>
+</body>
+</html>

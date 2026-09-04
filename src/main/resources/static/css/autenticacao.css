@@ -587,3 +587,33 @@ input {
         margin-bottom: 12px;
     }
 }
+
+#formularioCadastro.formulario-ativo {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 7px;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(3, 98, 76, 0.35) transparent;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+}
+
+#formularioCadastro.formulario-ativo::-webkit-scrollbar {
+    width: 6px;
+}
+
+#formularioCadastro.formulario-ativo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#formularioCadastro.formulario-ativo::-webkit-scrollbar-thumb {
+    background: rgba(3, 98, 76, 0.28);
+    border-radius: 20px;
+}
+
+#formularioCadastro.formulario-ativo::-webkit-scrollbar-thumb:hover {
+    background: rgba(3, 98, 76, 0.48);
+}

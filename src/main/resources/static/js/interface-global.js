@@ -1,7 +1,12 @@
 (() => {
-    const CHAVE_PERFIL = "picpayPeople.perfil";
-    const CHAVE_NOTIFICACOES = "picpayPeople.notificacoes";
-    const LIMITE_NOTIFICACOES = 30;
+    const CHAVE_PERFIL =
+        "picpayPeople.perfil";
+
+    const CHAVE_NOTIFICACOES =
+        "picpayPeople.notificacoes";
+
+    const LIMITE_NOTIFICACOES =
+        30;
 
     const estado = {
         perfil: null,
@@ -11,31 +16,54 @@
 
     const referencias = {};
 
-    function lerJSON(chave, padrao) {
+    function lerJSON(
+        chave,
+        padrao
+    ) {
         try {
-            const valor = localStorage.getItem(chave);
+            const valor =
+                localStorage.getItem(
+                    chave
+                );
 
             if (!valor) {
                 return padrao;
             }
 
-            return JSON.parse(valor);
+            return JSON.parse(
+                valor
+            );
+
         } catch {
             return padrao;
         }
     }
 
-    function salvarJSON(chave, valor) {
+    function salvarJSON(
+        chave,
+        valor
+    ) {
         localStorage.setItem(
             chave,
-            JSON.stringify(valor)
+            JSON.stringify(
+                valor
+            )
         );
     }
 
-    function obterTexto(seletor, padrao) {
-        const elemento = document.querySelector(seletor);
+    function obterTexto(
+        seletor,
+        padrao
+    ) {
+        const elemento =
+            document.querySelector(
+                seletor
+            );
 
-        const texto = elemento?.textContent?.trim();
+        const texto =
+            elemento
+                ?.textContent
+                ?.trim();
 
         return texto || padrao;
     }
@@ -66,6 +94,28 @@
     }
 
     function carregarPerfil() {
+        const usuarioSessao =
+            window
+                .PicPayAPI
+                ?.obterUsuarioSessao
+                ?.();
+
+        if (usuarioSessao) {
+            return {
+                id:
+                    usuarioSessao.id,
+
+                nome:
+                    usuarioSessao.nome,
+
+                email:
+                    usuarioSessao.email,
+
+                cargo:
+                    usuarioSessao.cargo
+            };
+        }
+
         const perfilSalvo =
             lerJSON(
                 CHAVE_PERFIL,
@@ -77,17 +127,23 @@
         }
 
         return {
+            id:
+                perfilSalvo.id,
+
             nome:
                 perfilSalvo.nome ||
-                criarPerfilPadrao().nome,
+                criarPerfilPadrao()
+                    .nome,
 
             email:
                 perfilSalvo.email ||
-                criarPerfilPadrao().email,
+                criarPerfilPadrao()
+                    .email,
 
             cargo:
                 perfilSalvo.cargo ||
-                criarPerfilPadrao().cargo
+                criarPerfilPadrao()
+                    .cargo
         };
     }
 
@@ -98,13 +154,18 @@
                 []
             );
 
-        return Array.isArray(lista)
+        return Array.isArray(
+            lista
+        )
             ? lista
             : [];
     }
 
     function injetarEstrutura() {
-        const estrutura = document.createElement("div");
+        const estrutura =
+            document.createElement(
+                "div"
+            );
 
         estrutura.innerHTML = `
             <div
@@ -154,6 +215,7 @@
                 <div class="ui-modal-topo">
                     <div>
                         <h2>Editar perfil</h2>
+
                         <p>
                             Atualize as informações exibidas na sua conta.
                         </p>
@@ -169,6 +231,7 @@
                 </div>
 
                 <div class="ui-perfil-apresentacao">
+
                     <div class="ui-perfil-avatar">
                         <img
                             src="./img/user_icon_verde.png"
@@ -177,6 +240,7 @@
                     </div>
 
                     <div>
+
                         <strong id="uiPerfilNomePreview">
                             Fulano
                         </strong>
@@ -184,13 +248,17 @@
                         <span id="uiPerfilCargoPreview">
                             People Partner
                         </span>
+
                     </div>
+
                 </div>
 
                 <form id="uiFormPerfil">
+
                     <div class="ui-form">
 
                         <div class="ui-form-grupo">
+
                             <label for="uiPerfilNome">
                                 Nome completo
                             </label>
@@ -201,9 +269,11 @@
                                 autocomplete="name"
                                 required
                             >
+
                         </div>
 
                         <div class="ui-form-grupo">
+
                             <label for="uiPerfilEmail">
                                 E-mail
                             </label>
@@ -214,9 +284,11 @@
                                 autocomplete="email"
                                 required
                             >
+
                         </div>
 
                         <div class="ui-form-grupo">
+
                             <label for="uiPerfilCargo">
                                 Cargo
                             </label>
@@ -226,6 +298,7 @@
                                 id="uiPerfilCargo"
                                 required
                             >
+
                         </div>
 
                         <div
@@ -236,6 +309,7 @@
                     </div>
 
                     <div class="ui-modal-rodape">
+
                         <button
                             type="button"
                             class="ui-botao ui-botao-secundario"
@@ -250,7 +324,9 @@
                         >
                             Salvar alterações
                         </button>
+
                     </div>
+
                 </form>
             </div>
 
@@ -258,12 +334,19 @@
                 class="ui-modal"
                 id="uiModalSeguranca"
             >
+
                 <div class="ui-modal-topo">
+
                     <div>
-                        <h2>Ambiente seguro</h2>
+
+                        <h2>
+                            Ambiente seguro
+                        </h2>
+
                         <p>
                             Cuidados importantes durante o uso da plataforma.
                         </p>
+
                     </div>
 
                     <button
@@ -273,19 +356,24 @@
                     >
                         ×
                     </button>
+
                 </div>
 
                 <div class="ui-seguranca-corpo">
 
                     <div class="ui-seguranca-destaque">
+
                         <div class="ui-seguranca-destaque-icone">
+
                             <img
                                 src="./img/cadeado_sidebar.png"
                                 alt=""
                             >
+
                         </div>
 
                         <div>
+
                             <strong>
                                 Proteja o acesso à sua conta
                             </strong>
@@ -293,33 +381,51 @@
                             <p>
                                 As informações de candidatos devem ser acessadas apenas por usuários autorizados.
                             </p>
+
                         </div>
+
                     </div>
 
                     <div class="ui-seguranca-item">
-                        <strong>Sessão individual</strong>
+
+                        <strong>
+                            Sessão individual
+                        </strong>
+
                         <p>
                             Evite utilizar sua conta em dispositivos compartilhados e encerre a sessão ao terminar.
                         </p>
+
                     </div>
 
                     <div class="ui-seguranca-item">
-                        <strong>Dados pessoais</strong>
+
+                        <strong>
+                            Dados pessoais
+                        </strong>
+
                         <p>
                             Utilize as informações de candidatos somente para atividades relacionadas ao processo seletivo.
                         </p>
+
                     </div>
 
                     <div class="ui-seguranca-item">
-                        <strong>Credenciais</strong>
+
+                        <strong>
+                            Credenciais
+                        </strong>
+
                         <p>
                             Nunca compartilhe sua senha ou outras credenciais de acesso com terceiros.
                         </p>
+
                     </div>
 
                 </div>
 
                 <div class="ui-modal-rodape">
+
                     <button
                         type="button"
                         class="ui-botao ui-botao-principal"
@@ -328,13 +434,16 @@
                     >
                         Entendi
                     </button>
+
                 </div>
+
             </div>
 
             <div
                 class="ui-modal ui-modal-confirmacao"
                 id="uiModalConfirmacao"
             >
+
                 <div class="ui-confirmacao-conteudo">
 
                     <div
@@ -373,10 +482,13 @@
                     </button>
 
                 </div>
+
             </div>
         `;
 
-        while (estrutura.firstChild) {
+        while (
+            estrutura.firstChild
+        ) {
             document.body.appendChild(
                 estrutura.firstChild
             );
@@ -490,42 +602,54 @@
             estado.perfil;
 
         document
-            .querySelectorAll("#nomeUsuario")
+            .querySelectorAll(
+                "#nomeUsuario"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.nome;
             });
 
         document
-            .querySelectorAll(".perfil-textos strong")
+            .querySelectorAll(
+                ".perfil-textos strong"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.nome;
             });
 
         document
-            .querySelectorAll(".perfil-textos span")
+            .querySelectorAll(
+                ".perfil-textos span"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.cargo;
             });
 
         document
-            .querySelectorAll(".perfil-dropdown-informacoes strong")
+            .querySelectorAll(
+                ".perfil-dropdown-informacoes strong"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.nome;
             });
 
         document
-            .querySelectorAll(".perfil-dropdown-email")
+            .querySelectorAll(
+                ".perfil-dropdown-email"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.email;
             });
 
         document
-            .querySelectorAll(".perfil-dropdown-cargo")
+            .querySelectorAll(
+                ".perfil-dropdown-cargo"
+            )
             .forEach(elemento => {
                 elemento.textContent =
                     perfil.cargo;
@@ -574,7 +698,9 @@
 
     function fecharDropdownPerfil() {
         document
-            .querySelectorAll(".perfil-container")
+            .querySelectorAll(
+                ".perfil-container"
+            )
             .forEach(container => {
                 container.classList.remove(
                     "aberto"
@@ -582,7 +708,9 @@
             });
 
         document
-            .querySelectorAll("#botaoPerfil")
+            .querySelectorAll(
+                "#botaoPerfil"
+            )
             .forEach(botao => {
                 botao.setAttribute(
                     "aria-expanded",
@@ -597,15 +725,23 @@
                 ".ui-modal.aberto"
             );
 
-        referencias.overlay.classList.toggle(
-            "ativo",
-            Boolean(existeModalAberto)
-        );
+        referencias.overlay
+            .classList
+            .toggle(
+                "ativo",
+                Boolean(
+                    existeModalAberto
+                )
+            );
 
-        document.body.classList.toggle(
-            "ui-modal-aberto",
-            Boolean(existeModalAberto)
-        );
+        document.body
+            .classList
+            .toggle(
+                "ui-modal-aberto",
+                Boolean(
+                    existeModalAberto
+                )
+            );
     }
 
     function abrirModal(modal) {
@@ -681,8 +817,10 @@
 
     function gerarId() {
         if (
-            typeof crypto !== "undefined" &&
-            typeof crypto.randomUUID === "function"
+            typeof crypto !==
+                "undefined" &&
+            typeof crypto.randomUUID ===
+                "function"
         ) {
             return crypto.randomUUID();
         }
@@ -751,13 +889,14 @@
             return `Há ${dias} dias`;
         }
 
-        return momento.toLocaleDateString(
-            "pt-BR",
-            {
-                day: "2-digit",
-                month: "short"
-            }
-        );
+        return momento
+            .toLocaleDateString(
+                "pt-BR",
+                {
+                    day: "2-digit",
+                    month: "short"
+                }
+            );
     }
 
     function salvarNotificacoes() {
@@ -769,20 +908,25 @@
 
     function atualizarBadge() {
         const quantidade =
-            estado.notificacoes.filter(
-                notificacao =>
-                    !notificacao.lida
-            ).length;
+            estado.notificacoes
+                .filter(
+                    notificacao =>
+                        !notificacao.lida
+                )
+                .length;
 
         document
             .querySelectorAll(
                 ".notificacao-indicador"
             )
             .forEach(badge => {
+
                 badge.textContent =
                     quantidade > 9
                         ? "9+"
-                        : String(quantidade);
+                        : String(
+                            quantidade
+                        );
 
                 badge.classList.toggle(
                     "visivel",
@@ -792,11 +936,14 @@
     }
 
     function renderizarNotificacoes() {
-        referencias.listaNotificacoes.innerHTML =
+        referencias
+            .listaNotificacoes
+            .innerHTML =
             "";
 
         if (
-            estado.notificacoes.length === 0
+            estado.notificacoes
+                .length === 0
         ) {
             const vazio =
                 document.createElement(
@@ -823,14 +970,22 @@
                 </p>
             `;
 
-            referencias.listaNotificacoes.appendChild(
-                vazio
-            );
+            referencias
+                .listaNotificacoes
+                .appendChild(
+                    vazio
+                );
 
-            referencias.limparHistorico.style.display =
+            referencias
+                .limparHistorico
+                .style
+                .display =
                 "none";
 
-            referencias.marcarLidas.style.visibility =
+            referencias
+                .marcarLidas
+                .style
+                .visibility =
                 "hidden";
 
             atualizarBadge();
@@ -838,116 +993,138 @@
             return;
         }
 
-        referencias.limparHistorico.style.display =
+        referencias
+            .limparHistorico
+            .style
+            .display =
             "block";
 
         const existeNaoLida =
-            estado.notificacoes.some(
-                notificacao =>
-                    !notificacao.lida
-            );
+            estado.notificacoes
+                .some(
+                    notificacao =>
+                        !notificacao.lida
+                );
 
-        referencias.marcarLidas.style.visibility =
+        referencias
+            .marcarLidas
+            .style
+            .visibility =
             existeNaoLida
                 ? "visible"
                 : "hidden";
 
-        estado.notificacoes.forEach(
-            notificacao => {
-                const item =
-                    document.createElement(
-                        "div"
-                    );
+        estado.notificacoes
+            .forEach(
+                notificacao => {
 
-                item.className =
-                    "ui-notificacao-item";
+                    const item =
+                        document
+                            .createElement(
+                                "div"
+                            );
 
-                if (!notificacao.lida) {
-                    item.classList.add(
-                        "nao-lida"
-                    );
-                }
+                    item.className =
+                        "ui-notificacao-item";
 
-                item.dataset.id =
-                    notificacao.id;
+                    if (
+                        !notificacao.lida
+                    ) {
+                        item.classList.add(
+                            "nao-lida"
+                        );
+                    }
 
-                const icone =
-                    document.createElement(
-                        "div"
-                    );
+                    item.dataset.id =
+                        notificacao.id;
 
-                icone.className =
-                    `ui-notificacao-icone ${notificacao.tipo}`;
+                    const icone =
+                        document
+                            .createElement(
+                                "div"
+                            );
 
-                icone.textContent =
-                    simboloNotificacao(
-                        notificacao.tipo
-                    );
+                    icone.className =
+                        `ui-notificacao-icone ${notificacao.tipo}`;
 
-                const conteudo =
-                    document.createElement(
-                        "div"
-                    );
-
-                conteudo.className =
-                    "ui-notificacao-conteudo";
-
-                const titulo =
-                    document.createElement(
-                        "strong"
-                    );
-
-                titulo.textContent =
-                    notificacao.titulo;
-
-                const descricao =
-                    document.createElement(
-                        "p"
-                    );
-
-                descricao.textContent =
-                    notificacao.descricao;
-
-                const tempo =
-                    document.createElement(
-                        "time"
-                    );
-
-                tempo.textContent =
-                    formatarTempo(
-                        notificacao.data
-                    );
-
-                conteudo.append(
-                    titulo,
-                    descricao,
-                    tempo
-                );
-
-                item.append(
-                    icone,
-                    conteudo
-                );
-
-                if (!notificacao.lida) {
-                    const ponto =
-                        document.createElement(
-                            "span"
+                    icone.textContent =
+                        simboloNotificacao(
+                            notificacao.tipo
                         );
 
-                    ponto.className =
-                        "ui-notificacao-ponto";
+                    const conteudo =
+                        document
+                            .createElement(
+                                "div"
+                            );
 
-                    item.appendChild(
-                        ponto
+                    conteudo.className =
+                        "ui-notificacao-conteudo";
+
+                    const titulo =
+                        document
+                            .createElement(
+                                "strong"
+                            );
+
+                    titulo.textContent =
+                        notificacao.titulo;
+
+                    const descricao =
+                        document
+                            .createElement(
+                                "p"
+                            );
+
+                    descricao.textContent =
+                        notificacao.descricao;
+
+                    const tempo =
+                        document
+                            .createElement(
+                                "time"
+                            );
+
+                    tempo.textContent =
+                        formatarTempo(
+                            notificacao.data
+                        );
+
+                    conteudo.append(
+                        titulo,
+                        descricao,
+                        tempo
                     );
-                }
 
-                referencias.listaNotificacoes.appendChild(
-                    item
-                );
-            }
-        );
+                    item.append(
+                        icone,
+                        conteudo
+                    );
+
+                    if (
+                        !notificacao.lida
+                    ) {
+                        const ponto =
+                            document
+                                .createElement(
+                                    "span"
+                                );
+
+                        ponto.className =
+                            "ui-notificacao-ponto";
+
+                        item.appendChild(
+                            ponto
+                        );
+                    }
+
+                    referencias
+                        .listaNotificacoes
+                        .appendChild(
+                            item
+                        );
+                }
+            );
 
         atualizarBadge();
     }
@@ -965,24 +1142,35 @@
         ];
 
         const notificacao = {
-            id: gerarId(),
+            id:
+                gerarId(),
+
             titulo:
                 String(
-                    titulo || "Atividade"
+                    titulo ||
+                    "Atividade"
                 ),
+
             descricao:
                 String(
-                    descricao || ""
+                    descricao ||
+                    ""
                 ),
+
             tipo:
-                tiposPermitidos.includes(
-                    tipo
-                )
+                tiposPermitidos
+                    .includes(
+                        tipo
+                    )
                     ? tipo
                     : "info",
+
             data:
-                new Date().toISOString(),
-            lida: false
+                new Date()
+                    .toISOString(),
+
+            lida:
+                false
         };
 
         estado.notificacoes.unshift(
@@ -996,6 +1184,7 @@
             );
 
         salvarNotificacoes();
+
         renderizarNotificacoes();
 
         return notificacao;
@@ -1011,13 +1200,17 @@
             );
 
         salvarNotificacoes();
+
         renderizarNotificacoes();
     }
 
-    function marcarNotificacaoComoLida(id) {
+    function marcarNotificacaoComoLida(
+        id
+    ) {
         estado.notificacoes =
             estado.notificacoes.map(
                 notificacao => {
+
                     if (
                         notificacao.id !== id
                     ) {
@@ -1032,6 +1225,7 @@
             );
 
         salvarNotificacoes();
+
         renderizarNotificacoes();
     }
 
@@ -1048,7 +1242,8 @@
         const posicao =
             botao.getBoundingClientRect();
 
-        const margem = 12;
+        const margem =
+            12;
 
         const largura =
             Math.min(
@@ -1072,21 +1267,33 @@
                 )
             );
 
-        referencias.painelNotificacoes.style.width =
+        referencias
+            .painelNotificacoes
+            .style
+            .width =
             `${largura}px`;
 
-        referencias.painelNotificacoes.style.left =
+        referencias
+            .painelNotificacoes
+            .style
+            .left =
             `${esquerda}px`;
 
-        referencias.painelNotificacoes.style.top =
+        referencias
+            .painelNotificacoes
+            .style
+            .top =
             `${posicao.bottom + 12}px`;
     }
 
     function abrirPainelNotificacoes() {
         const jaAberto =
-            referencias.painelNotificacoes.classList.contains(
-                "aberto"
-            );
+            referencias
+                .painelNotificacoes
+                .classList
+                .contains(
+                    "aberto"
+                );
 
         if (jaAberto) {
             fecharPainelNotificacoes();
@@ -1097,32 +1304,46 @@
 
         posicionarPainelNotificacoes();
 
-        referencias.painelNotificacoes.classList.add(
-            "aberto"
-        );
+        referencias
+            .painelNotificacoes
+            .classList
+            .add(
+                "aberto"
+            );
     }
 
     function fecharPainelNotificacoes() {
-        referencias.painelNotificacoes.classList.remove(
-            "aberto"
-        );
+        referencias
+            .painelNotificacoes
+            .classList
+            .remove(
+                "aberto"
+            );
     }
 
-    function resolverConfirmacao(valor) {
-        referencias.modalConfirmacao.classList.remove(
-            "aberto"
-        );
+    function resolverConfirmacao(
+        valor
+    ) {
+        referencias
+            .modalConfirmacao
+            .classList
+            .remove(
+                "aberto"
+            );
 
         atualizarOverlay();
 
         const resolver =
-            estado.resolverConfirmacao;
+            estado
+                .resolverConfirmacao;
 
         estado.resolverConfirmacao =
             null;
 
         if (resolver) {
-            resolver(valor);
+            resolver(
+                valor
+            );
         }
     }
 
@@ -1140,62 +1361,84 @@
             );
         }
 
-        referencias.confirmacaoTitulo.textContent =
+        referencias
+            .confirmacaoTitulo
+            .textContent =
             titulo;
 
-        referencias.confirmacaoDescricao.textContent =
+        referencias
+            .confirmacaoDescricao
+            .textContent =
             descricao;
 
-        referencias.confirmacaoConfirmar.textContent =
+        referencias
+            .confirmacaoConfirmar
+            .textContent =
             textoConfirmar;
 
-        referencias.confirmacaoIcone.textContent =
+        referencias
+            .confirmacaoIcone
+            .textContent =
             perigosa
                 ? "!"
                 : "✓";
 
-        referencias.modalConfirmacao.classList.toggle(
-            "perigoso",
-            perigosa
-        );
+        referencias
+            .modalConfirmacao
+            .classList
+            .toggle(
+                "perigoso",
+                perigosa
+            );
 
-        referencias.confirmacaoConfirmar.className =
+        referencias
+            .confirmacaoConfirmar
+            .className =
             perigosa
                 ? "ui-botao ui-botao-perigo"
                 : "ui-botao ui-botao-principal";
 
         abrirModal(
-            referencias.modalConfirmacao
+            referencias
+                .modalConfirmacao
         );
 
-        return new Promise(resolve => {
-            estado.resolverConfirmacao =
-                resolve;
-        });
+        return new Promise(
+            resolve => {
+                estado.resolverConfirmacao =
+                    resolve;
+            }
+        );
     }
 
     function abrirSeguranca() {
         abrirModal(
-            referencias.modalSeguranca
+            referencias
+                .modalSeguranca
         );
     }
 
-    async function salvarPerfil(event) {
+    async function salvarPerfil(
+        event
+    ) {
         event.preventDefault();
 
         const novoPerfil = {
             nome:
-                referencias.perfilNome
+                referencias
+                    .perfilNome
                     .value
                     .trim(),
 
             email:
-                referencias.perfilEmail
+                referencias
+                    .perfilEmail
                     .value
                     .trim(),
 
             cargo:
-                referencias.perfilCargo
+                referencias
+                    .perfilCargo
                     .value
                     .trim()
         };
@@ -1206,21 +1449,27 @@
             );
 
         if (erro) {
-            referencias.perfilErro.textContent =
+            referencias
+                .perfilErro
+                .textContent =
                 erro;
 
             return;
         }
 
-        referencias.perfilErro.textContent =
+        referencias
+            .perfilErro
+            .textContent =
             "";
 
         const confirmou =
             await confirmarAcao({
                 titulo:
                     "Salvar alterações?",
+
                 descricao:
                     "Os dados exibidos no seu perfil serão atualizados.",
+
                 textoConfirmar:
                     "Salvar alterações"
             });
@@ -1229,28 +1478,103 @@
             return;
         }
 
-        estado.perfil =
-            novoPerfil;
+        const usuarioSessao =
+            window
+                .PicPayAPI
+                ?.obterUsuarioSessao
+                ?.();
 
-        salvarJSON(
-            CHAVE_PERFIL,
-            estado.perfil
-        );
+        if (
+            !usuarioSessao?.id
+        ) {
+            window
+                .PicPayAPI
+                ?.encerrarSessao
+                ?.();
 
-        aplicarPerfil();
+            window.location.href =
+                "./index.html";
 
-        fecharModal(
-            referencias.modalPerfil
-        );
+            return;
+        }
 
-        registrarNotificacao({
-            titulo:
-                "Perfil atualizado",
-            descricao:
-                "As informações do seu perfil foram alteradas.",
-            tipo:
-                "sucesso"
-        });
+        const botaoSalvar =
+            referencias
+                .formPerfil
+                .querySelector(
+                    'button[type="submit"]'
+                );
+
+        const textoOriginal =
+            botaoSalvar.textContent;
+
+        botaoSalvar.disabled =
+            true;
+
+        botaoSalvar.textContent =
+            "Salvando...";
+
+        try {
+            const usuarioAtualizado =
+                await window
+                    .PicPayAPI
+                    .atualizarUsuario(
+                        usuarioSessao.id,
+                        novoPerfil
+                    );
+
+            estado.perfil =
+                usuarioAtualizado;
+
+            window
+                .PicPayAPI
+                .salvarUsuarioSessao(
+                    usuarioAtualizado
+                );
+
+            salvarJSON(
+                CHAVE_PERFIL,
+                estado.perfil
+            );
+
+            aplicarPerfil();
+
+            fecharModal(
+                referencias
+                    .modalPerfil
+            );
+
+            registrarNotificacao({
+                titulo:
+                    "Perfil atualizado",
+
+                descricao:
+                    "As informações do seu perfil foram alteradas.",
+
+                tipo:
+                    "sucesso"
+            });
+
+        } catch (erroApi) {
+            referencias
+                .perfilErro
+                .textContent =
+                window
+                    .PicPayAPI
+                    ?.mensagemErro
+                    ?.(
+                        erroApi,
+                        "Não foi possível atualizar o perfil."
+                    ) ||
+                "Não foi possível atualizar o perfil.";
+
+        } finally {
+            botaoSalvar.disabled =
+                false;
+
+            botaoSalvar.textContent =
+                textoOriginal;
+        }
     }
 
     async function confirmarSaida() {
@@ -1260,10 +1584,13 @@
             await confirmarAcao({
                 titulo:
                     "Deseja sair?",
+
                 descricao:
                     "Sua sessão atual será encerrada e você voltará para a tela de login.",
+
                 textoConfirmar:
                     "Sair",
+
                 perigosa:
                     true
             });
@@ -1272,13 +1599,19 @@
             return;
         }
 
+        window
+            .PicPayAPI
+            ?.encerrarSessao
+            ?.();
+
         window.location.href =
             "./index.html";
     }
 
     async function limparHistorico() {
         if (
-            estado.notificacoes.length === 0
+            estado.notificacoes
+                .length === 0
         ) {
             return;
         }
@@ -1289,10 +1622,13 @@
             await confirmarAcao({
                 titulo:
                     "Limpar histórico?",
+
                 descricao:
                     "Todas as atividades registradas nesta interface serão removidas.",
+
                 textoConfirmar:
                     "Limpar histórico",
+
                 perigosa:
                     true
             });
@@ -1304,6 +1640,7 @@
         estado.notificacoes = [];
 
         salvarNotificacoes();
+
         renderizarNotificacoes();
     }
 
@@ -1311,6 +1648,7 @@
         document.addEventListener(
             "click",
             event => {
+
                 const editarPerfil =
                     event.target.closest(
                         ".botao-editar-perfil"
@@ -1371,10 +1709,14 @@
         document.addEventListener(
             "click",
             event => {
+
                 if (
-                    referencias.painelNotificacoes.classList.contains(
-                        "aberto"
-                    ) &&
+                    referencias
+                        .painelNotificacoes
+                        .classList
+                        .contains(
+                            "aberto"
+                        ) &&
                     !event.target.closest(
                         "#uiNotificacoes"
                     ) &&
@@ -1387,92 +1729,128 @@
             }
         );
 
-        referencias.formPerfil.addEventListener(
-            "submit",
-            salvarPerfil
-        );
+        referencias
+            .formPerfil
+            .addEventListener(
+                "submit",
+                salvarPerfil
+            );
 
-        referencias.perfilNome.addEventListener(
-            "input",
-            () => {
-                referencias.perfilNomePreview.textContent =
-                    referencias.perfilNome.value.trim() ||
-                    "Seu nome";
-            }
-        );
+        referencias
+            .perfilNome
+            .addEventListener(
+                "input",
+                () => {
 
-        referencias.perfilCargo.addEventListener(
-            "input",
-            () => {
-                referencias.perfilCargoPreview.textContent =
-                    referencias.perfilCargo.value.trim() ||
-                    "Seu cargo";
-            }
-        );
-
-        referencias.marcarLidas.addEventListener(
-            "click",
-            marcarTodasComoLidas
-        );
-
-        referencias.limparHistorico.addEventListener(
-            "click",
-            limparHistorico
-        );
-
-        referencias.listaNotificacoes.addEventListener(
-            "click",
-            event => {
-                const item =
-                    event.target.closest(
-                        ".ui-notificacao-item"
-                    );
-
-                if (!item) {
-                    return;
+                    referencias
+                        .perfilNomePreview
+                        .textContent =
+                        referencias
+                            .perfilNome
+                            .value
+                            .trim() ||
+                        "Seu nome";
                 }
+            );
 
-                marcarNotificacaoComoLida(
-                    item.dataset.id
-                );
-            }
-        );
+        referencias
+            .perfilCargo
+            .addEventListener(
+                "input",
+                () => {
 
-        referencias.confirmacaoCancelar.addEventListener(
-            "click",
-            () => {
-                resolverConfirmacao(
-                    false
-                );
-            }
-        );
+                    referencias
+                        .perfilCargoPreview
+                        .textContent =
+                        referencias
+                            .perfilCargo
+                            .value
+                            .trim() ||
+                        "Seu cargo";
+                }
+            );
 
-        referencias.confirmacaoConfirmar.addEventListener(
-            "click",
-            () => {
-                resolverConfirmacao(
-                    true
-                );
-            }
-        );
+        referencias
+            .marcarLidas
+            .addEventListener(
+                "click",
+                marcarTodasComoLidas
+            );
+
+        referencias
+            .limparHistorico
+            .addEventListener(
+                "click",
+                limparHistorico
+            );
+
+        referencias
+            .listaNotificacoes
+            .addEventListener(
+                "click",
+                event => {
+
+                    const item =
+                        event.target.closest(
+                            ".ui-notificacao-item"
+                        );
+
+                    if (!item) {
+                        return;
+                    }
+
+                    marcarNotificacaoComoLida(
+                        item.dataset.id
+                    );
+                }
+            );
+
+        referencias
+            .confirmacaoCancelar
+            .addEventListener(
+                "click",
+                () => {
+
+                    resolverConfirmacao(
+                        false
+                    );
+                }
+            );
+
+        referencias
+            .confirmacaoConfirmar
+            .addEventListener(
+                "click",
+                () => {
+
+                    resolverConfirmacao(
+                        true
+                    );
+                }
+            );
 
         document
             .querySelectorAll(
                 "[data-ui-fechar]"
             )
             .forEach(botao => {
+
                 botao.addEventListener(
                     "click",
                     () => {
+
                         const tipo =
-                            botao.dataset
+                            botao
+                                .dataset
                                 .uiFechar;
 
                         if (
-                            tipo === "perfil"
+                            tipo ===
+                            "perfil"
                         ) {
                             fecharModal(
-                                referencias.modalPerfil
+                                referencias
+                                    .modalPerfil
                             );
                         }
 
@@ -1481,43 +1859,54 @@
                             "seguranca"
                         ) {
                             fecharModal(
-                                referencias.modalSeguranca
+                                referencias
+                                    .modalSeguranca
                             );
                         }
                     }
                 );
             });
 
-        referencias.overlay.addEventListener(
-            "click",
-            () => {
-                if (
-                    referencias.modalConfirmacao.classList.contains(
-                        "aberto"
-                    )
-                ) {
-                    resolverConfirmacao(
-                        false
+        referencias
+            .overlay
+            .addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        referencias
+                            .modalConfirmacao
+                            .classList
+                            .contains(
+                                "aberto"
+                            )
+                    ) {
+                        resolverConfirmacao(
+                            false
+                        );
+
+                        return;
+                    }
+
+                    fecharModal(
+                        referencias
+                            .modalPerfil
                     );
 
-                    return;
+                    fecharModal(
+                        referencias
+                            .modalSeguranca
+                    );
                 }
-
-                fecharModal(
-                    referencias.modalPerfil
-                );
-
-                fecharModal(
-                    referencias.modalSeguranca
-                );
-            }
-        );
+            );
 
         document.addEventListener(
             "keydown",
             event => {
+
                 if (
-                    event.key !== "Escape"
+                    event.key !==
+                    "Escape"
                 ) {
                     return;
                 }
@@ -1525,9 +1914,12 @@
                 fecharPainelNotificacoes();
 
                 if (
-                    referencias.modalConfirmacao.classList.contains(
-                        "aberto"
-                    )
+                    referencias
+                        .modalConfirmacao
+                        .classList
+                        .contains(
+                            "aberto"
+                        )
                 ) {
                     resolverConfirmacao(
                         false
@@ -1537,11 +1929,13 @@
                 }
 
                 fecharModal(
-                    referencias.modalPerfil
+                    referencias
+                        .modalPerfil
                 );
 
                 fecharModal(
-                    referencias.modalSeguranca
+                    referencias
+                        .modalSeguranca
                 );
             }
         );
@@ -1564,7 +1958,62 @@
         }
     }
 
-    function atualizarPerfilExternamente(dados) {
+    async function sincronizarPerfilComApi() {
+        const usuarioSessao =
+            window
+                .PicPayAPI
+                ?.obterUsuarioSessao
+                ?.();
+
+        if (
+            !usuarioSessao?.id
+        ) {
+            return;
+        }
+
+        try {
+            const usuario =
+                await window
+                    .PicPayAPI
+                    .buscarUsuario(
+                        usuarioSessao.id
+                    );
+
+            estado.perfil =
+                usuario;
+
+            window
+                .PicPayAPI
+                .salvarUsuarioSessao(
+                    usuario
+                );
+
+            salvarJSON(
+                CHAVE_PERFIL,
+                usuario
+            );
+
+            aplicarPerfil();
+
+        } catch (erro) {
+            if (
+                erro?.status === 404 ||
+                erro?.status === 401
+            ) {
+                window
+                    .PicPayAPI
+                    .encerrarSessao();
+
+                window.location.replace(
+                    "./index.html"
+                );
+            }
+        }
+    }
+
+    function atualizarPerfilExternamente(
+        dados
+    ) {
         if (!dados) {
             return;
         }
@@ -1599,9 +2048,12 @@
 
         configurarEventos();
 
+        sincronizarPerfilComApi();
+
         window.picPayPeopleUI = {
             registrarNotificacao,
             confirmarAcao,
+
             atualizarPerfil:
                 atualizarPerfilExternamente,
 

@@ -1183,3 +1183,42 @@ td {
     }
 
 }
+
+.dashboard-candidato-nome {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--preto-70);
+}
+
+.dashboard-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.dashboard-status.analise {
+    color: #2C69BF;
+    background: rgba(61, 140, 255, 0.10);
+}
+
+.dashboard-status.aprovado {
+    color: #03624C;
+    background: rgba(3, 98, 76, 0.10);
+}
+
+.dashboard-status.reprovado {
+    color: #C93438;
+    background: rgba(238, 62, 66, 0.10);
+}
+
+.dashboard-status.contratado {
+    color: #087C46;
+    background: rgba(17, 199, 111, 0.12);
+}

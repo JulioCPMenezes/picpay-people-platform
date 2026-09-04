@@ -28,151 +28,571 @@ const estadosBrasil = [
     ["TO", "Tocantins"]
 ];
 
-const periodoSaudacao = document.getElementById("periodoSaudacao");
+const periodoSaudacao =
+    document.getElementById(
+        "periodoSaudacao"
+    );
 
-const perfilContainer = document.querySelector(".perfil-container");
-const botaoPerfil = document.getElementById("botaoPerfil");
-const perfilDropdown = document.getElementById("perfilDropdown");
-const botaoSair = document.getElementById("botaoSair");
+const perfilContainer =
+    document.querySelector(
+        ".perfil-container"
+    );
 
-const overlayModal = document.getElementById("overlayModal");
+const botaoPerfil =
+    document.getElementById(
+        "botaoPerfil"
+    );
 
-const drawerNovo = document.getElementById("drawerNovo");
-const drawerDetalhes = document.getElementById("drawerDetalhes");
-const drawerEditar = document.getElementById("drawerEditar");
+const perfilDropdown =
+    document.getElementById(
+        "perfilDropdown"
+    );
 
-const modalAtualizacao = document.getElementById("modalAtualizacao");
-const modalCurriculo = document.getElementById("modalCurriculo");
-const modalExclusao = document.getElementById("modalExclusao");
+const overlayModal =
+    document.getElementById(
+        "overlayModal"
+    );
 
-const botaoNovoCandidato = document.getElementById("botaoNovoCandidato");
+const drawerNovo =
+    document.getElementById(
+        "drawerNovo"
+    );
 
-const corpoTabela = document.getElementById("corpoTabelaCandidatos");
-const candidatosVazio = document.getElementById("candidatosVazio");
+const drawerDetalhes =
+    document.getElementById(
+        "drawerDetalhes"
+    );
 
-const menuAcoesFlutuante = document.getElementById("menuAcoesFlutuante");
+const drawerEditar =
+    document.getElementById(
+        "drawerEditar"
+    );
 
-const campoPesquisa = document.getElementById("campoPesquisa");
-const filtroStatus = document.getElementById("filtroStatus");
-const filtroDepartamento = document.getElementById("filtroDepartamento");
-const filtroCidade = document.getElementById("filtroCidade");
-const botaoLimparFiltros = document.getElementById("botaoLimparFiltros");
+const modalAtualizacao =
+    document.getElementById(
+        "modalAtualizacao"
+    );
 
-const resumoTodos = document.getElementById("resumoTodos");
-const resumoAnalise = document.getElementById("resumoAnalise");
-const resumoAprovados = document.getElementById("resumoAprovados");
-const resumoReprovados = document.getElementById("resumoReprovados");
-const resumoContratados = document.getElementById("resumoContratados");
+const modalCurriculo =
+    document.getElementById(
+        "modalCurriculo"
+    );
 
-const textoPaginacao = document.getElementById("textoPaginacao");
-const paginaAtualElemento = document.getElementById("paginaAtual");
-const paginaAnterior = document.getElementById("paginaAnterior");
-const proximaPagina = document.getElementById("proximaPagina");
+const modalExclusao =
+    document.getElementById(
+        "modalExclusao"
+    );
 
-const formNovoCandidato = document.getElementById("formNovoCandidato");
-const formEditarCandidato = document.getElementById("formEditarCandidato");
-const formAtualizacaoRapida = document.getElementById("formAtualizacaoRapida");
+const botaoNovoCandidato =
+    document.getElementById(
+        "botaoNovoCandidato"
+    );
 
-const novoCpf = document.getElementById("novoCpf");
-const novoTelefone = document.getElementById("novoTelefone");
-const novoSalario = document.getElementById("novoSalario");
-const novoEstado = document.getElementById("novoEstado");
+const corpoTabela =
+    document.getElementById(
+        "corpoTabelaCandidatos"
+    );
 
-const editarCpf = document.getElementById("editarCpf");
-const editarTelefone = document.getElementById("editarTelefone");
-const editarSalario = document.getElementById("editarSalario");
-const editarEstado = document.getElementById("editarEstado");
+const candidatosVazio =
+    document.getElementById(
+        "candidatosVazio"
+    );
 
-const rapidoSalario = document.getElementById("rapidoSalario");
+const menuAcoesFlutuante =
+    document.getElementById(
+        "menuAcoesFlutuante"
+    );
 
-const areaUploadNovo = document.getElementById("areaUploadNovo");
-const curriculoNovo = document.getElementById("curriculoNovo");
-const arquivoNovoSelecionado = document.getElementById("arquivoNovoSelecionado");
+const campoPesquisa =
+    document.getElementById(
+        "campoPesquisa"
+    );
 
-const curriculoEditar = document.getElementById("curriculoEditar");
-const botaoSubstituirCurriculo = document.getElementById("botaoSubstituirCurriculo");
-const removerCurriculoEditar = document.getElementById("removerCurriculoEditar");
+const filtroStatus =
+    document.getElementById(
+        "filtroStatus"
+    );
 
-const curriculoCabecalho = document.getElementById("curriculoCabecalho");
-const curriculoFrame = document.getElementById("curriculoFrame");
-const curriculoVazio = document.getElementById("curriculoVazio");
+const filtroDepartamento =
+    document.getElementById(
+        "filtroDepartamento"
+    );
+
+const filtroCidade =
+    document.getElementById(
+        "filtroCidade"
+    );
+
+const botaoLimparFiltros =
+    document.getElementById(
+        "botaoLimparFiltros"
+    );
+
+const resumoTodos =
+    document.getElementById(
+        "resumoTodos"
+    );
+
+const resumoAnalise =
+    document.getElementById(
+        "resumoAnalise"
+    );
+
+const resumoAprovados =
+    document.getElementById(
+        "resumoAprovados"
+    );
+
+const resumoReprovados =
+    document.getElementById(
+        "resumoReprovados"
+    );
+
+const resumoContratados =
+    document.getElementById(
+        "resumoContratados"
+    );
+
+const textoPaginacao =
+    document.getElementById(
+        "textoPaginacao"
+    );
+
+const paginaAtualElemento =
+    document.getElementById(
+        "paginaAtual"
+    );
+
+const paginaAnterior =
+    document.getElementById(
+        "paginaAnterior"
+    );
+
+const proximaPagina =
+    document.getElementById(
+        "proximaPagina"
+    );
+
+const formNovoCandidato =
+    document.getElementById(
+        "formNovoCandidato"
+    );
+
+const formEditarCandidato =
+    document.getElementById(
+        "formEditarCandidato"
+    );
+
+const formAtualizacaoRapida =
+    document.getElementById(
+        "formAtualizacaoRapida"
+    );
+
+const novoCpf =
+    document.getElementById(
+        "novoCpf"
+    );
+
+const novoTelefone =
+    document.getElementById(
+        "novoTelefone"
+    );
+
+const novoSalario =
+    document.getElementById(
+        "novoSalario"
+    );
+
+const novoEstado =
+    document.getElementById(
+        "novoEstado"
+    );
+
+const editarCpf =
+    document.getElementById(
+        "editarCpf"
+    );
+
+const editarTelefone =
+    document.getElementById(
+        "editarTelefone"
+    );
+
+const editarSalario =
+    document.getElementById(
+        "editarSalario"
+    );
+
+const editarEstado =
+    document.getElementById(
+        "editarEstado"
+    );
+
+const rapidoSalario =
+    document.getElementById(
+        "rapidoSalario"
+    );
+
+const areaUploadNovo =
+    document.getElementById(
+        "areaUploadNovo"
+    );
+
+const curriculoNovo =
+    document.getElementById(
+        "curriculoNovo"
+    );
+
+const arquivoNovoSelecionado =
+    document.getElementById(
+        "arquivoNovoSelecionado"
+    );
+
+const curriculoEditar =
+    document.getElementById(
+        "curriculoEditar"
+    );
+
+const botaoSubstituirCurriculo =
+    document.getElementById(
+        "botaoSubstituirCurriculo"
+    );
+
+const removerCurriculoEditar =
+    document.getElementById(
+        "removerCurriculoEditar"
+    );
+
+const curriculoCabecalho =
+    document.getElementById(
+        "curriculoCabecalho"
+    );
+
+const curriculoFrame =
+    document.getElementById(
+        "curriculoFrame"
+    );
+
+const curriculoVazio =
+    document.getElementById(
+        "curriculoVazio"
+    );
 
 let candidatos = [];
 let candidatosFiltrados = [];
 let candidatoSelecionado = null;
+
 let paginaAtual = 1;
+
 let arquivoNovo = null;
 let arquivoEdicao = null;
 
+let curriculoUrlAtual = null;
+
 const candidatosPorPagina = 10;
 
+function definirCarregamento(
+    botao,
+    carregando,
+    textoCarregando
+) {
+    if (!botao) {
+        return;
+    }
+
+    if (
+        !botao.dataset.textoOriginal
+    ) {
+        botao.dataset.textoOriginal =
+            botao.textContent.trim();
+    }
+
+    botao.disabled =
+        carregando;
+
+    botao.textContent =
+        carregando
+            ? textoCarregando
+            : botao.dataset.textoOriginal;
+}
+
+function notificar(
+    titulo,
+    descricao,
+    tipo = "sucesso"
+) {
+    window.picPayPeopleUI
+        ?.registrarNotificacao
+        ?.({
+            titulo,
+            descricao,
+            tipo
+        });
+}
+
+function mostrarErroApi(
+    erro,
+    padrao =
+        "Não foi possível concluir a operação."
+) {
+    window.alert(
+        window.PicPayAPI
+            .mensagemErro(
+                erro,
+                padrao
+            )
+    );
+}
+
+async function carregarCandidatos() {
+    try {
+        const lista =
+            await window.PicPayAPI
+                .listarFuncionarios();
+
+        window.definirCandidatos(
+            lista
+        );
+
+    } catch (erro) {
+        window.definirCandidatos(
+            []
+        );
+
+        mostrarErroApi(
+            erro,
+            "Não foi possível carregar os candidatos."
+        );
+    }
+}
+
+async function atualizarCandidatoSelecionado() {
+    if (
+        !candidatoSelecionado?.id
+    ) {
+        return null;
+    }
+
+    try {
+        candidatoSelecionado =
+            await window.PicPayAPI
+                .buscarFuncionarioPorId(
+                    candidatoSelecionado.id
+                );
+
+        return candidatoSelecionado;
+
+    } catch (erro) {
+        mostrarErroApi(
+            erro,
+            "Não foi possível carregar o candidato."
+        );
+
+        return null;
+    }
+}
+
+async function atualizarNomeCurriculoEdicao() {
+    const elemento =
+        document.getElementById(
+            "arquivoEditarNome"
+        );
+
+    if (
+        !candidatoSelecionado?.id
+    ) {
+        elemento.textContent =
+            "Nenhum currículo";
+
+        return;
+    }
+
+    try {
+        const curriculo =
+            await window.PicPayAPI
+                .buscarCurriculo(
+                    candidatoSelecionado.id
+                );
+
+        elemento.textContent =
+            curriculo.nomeArquivo ||
+            "curriculo.pdf";
+
+    } catch (erro) {
+        if (
+            erro?.status === 404
+        ) {
+            elemento.textContent =
+                "Nenhum currículo";
+
+            return;
+        }
+
+        elemento.textContent =
+            "Currículo indisponível";
+    }
+}
+
+async function salvarCurriculoEdicao(
+    funcionarioId
+) {
+    if (!arquivoEdicao) {
+        return;
+    }
+
+    try {
+        await window.PicPayAPI
+            .substituirCurriculo(
+                funcionarioId,
+                arquivoEdicao
+            );
+
+        notificar(
+            "Currículo atualizado",
+            "O currículo do candidato foi substituído."
+        );
+
+    } catch (erro) {
+        if (
+            erro?.status !== 404
+        ) {
+            throw erro;
+        }
+
+        await window.PicPayAPI
+            .enviarCurriculo(
+                funcionarioId,
+                arquivoEdicao
+            );
+
+        notificar(
+            "Currículo adicionado",
+            "O currículo do candidato foi adicionado."
+        );
+    }
+
+    arquivoEdicao = null;
+
+    curriculoEditar.value =
+        "";
+}
+
 function atualizarSaudacao() {
-    const hora = new Date().getHours();
+    const hora =
+        new Date().getHours();
 
-    if (hora >= 5 && hora < 12) {
-        periodoSaudacao.textContent = "Bom dia";
+    if (
+        hora >= 5 &&
+        hora < 12
+    ) {
+        periodoSaudacao.textContent =
+            "Bom dia";
+
         return;
     }
 
-    if (hora >= 12 && hora < 18) {
-        periodoSaudacao.textContent = "Boa tarde";
+    if (
+        hora >= 12 &&
+        hora < 18
+    ) {
+        periodoSaudacao.textContent =
+            "Boa tarde";
+
         return;
     }
 
-    periodoSaudacao.textContent = "Boa noite";
+    periodoSaudacao.textContent =
+        "Boa noite";
 }
 
 function preencherEstados(select) {
-    estadosBrasil.forEach(([sigla, nome]) => {
-        const option = document.createElement("option");
+    estadosBrasil.forEach(
+        ([sigla, nome]) => {
 
-        option.value = sigla;
-        option.textContent = `${sigla} - ${nome}`;
+            const option =
+                document.createElement(
+                    "option"
+                );
 
-        select.appendChild(option);
-    });
+            option.value =
+                sigla;
+
+            option.textContent =
+                `${sigla} - ${nome}`;
+
+            select.appendChild(
+                option
+            );
+        }
+    );
 }
 
 function somenteNumeros(valor) {
-    return String(valor || "").replace(/\D/g, "");
+    return String(
+        valor || ""
+    ).replace(
+        /\D/g,
+        ""
+    );
 }
 
 function aplicarMascaraCpf(valor) {
-    let numeros = somenteNumeros(valor).slice(0, 11);
+    let numeros =
+        somenteNumeros(
+            valor
+        ).slice(
+            0,
+            11
+        );
 
-    numeros = numeros.replace(
-        /^(\d{3})(\d)/,
-        "$1.$2"
-    );
+    numeros =
+        numeros.replace(
+            /^(\d{3})(\d)/,
+            "$1.$2"
+        );
 
-    numeros = numeros.replace(
-        /^(\d{3})\.(\d{3})(\d)/,
-        "$1.$2.$3"
-    );
+    numeros =
+        numeros.replace(
+            /^(\d{3})\.(\d{3})(\d)/,
+            "$1.$2.$3"
+        );
 
-    numeros = numeros.replace(
-        /^(\d{3})\.(\d{3})\.(\d{3})(\d)/,
-        "$1.$2.$3-$4"
-    );
+    numeros =
+        numeros.replace(
+            /^(\d{3})\.(\d{3})\.(\d{3})(\d)/,
+            "$1.$2.$3-$4"
+        );
 
     return numeros;
 }
 
 function aplicarMascaraTelefone(valor) {
-    const numeros = somenteNumeros(valor).slice(0, 11);
+    const numeros =
+        somenteNumeros(
+            valor
+        ).slice(
+            0,
+            11
+        );
 
-    if (numeros.length <= 2) {
+    if (
+        numeros.length <= 2
+    ) {
         return numeros;
     }
 
-    if (numeros.length <= 6) {
+    if (
+        numeros.length <= 6
+    ) {
         return numeros.replace(
             /^(\d{2})(\d+)/,
             "($1) $2"
         );
     }
 
-    if (numeros.length <= 10) {
+    if (
+        numeros.length <= 10
+    ) {
         return numeros.replace(
             /^(\d{2})(\d{4})(\d+)/,
             "($1) $2-$3"
@@ -186,25 +606,33 @@ function aplicarMascaraTelefone(valor) {
 }
 
 function aplicarMascaraMoeda(valor) {
-    const numeros = somenteNumeros(valor);
+    const numeros =
+        somenteNumeros(
+            valor
+        );
 
     if (!numeros) {
         return "";
     }
 
-    const valorNumero = Number(numeros) / 100;
+    const valorNumero =
+        Number(numeros) / 100;
 
-    return valorNumero.toLocaleString(
-        "pt-BR",
-        {
-            style: "currency",
-            currency: "BRL"
-        }
-    );
+    return valorNumero
+        .toLocaleString(
+            "pt-BR",
+            {
+                style: "currency",
+                currency: "BRL"
+            }
+        );
 }
 
 function converterMoedaParaNumero(valor) {
-    const numeros = somenteNumeros(valor);
+    const numeros =
+        somenteNumeros(
+            valor
+        );
 
     if (!numeros) {
         return null;
@@ -222,18 +650,29 @@ function formatarSalario(valor) {
         return "--";
     }
 
-    return Number(valor).toLocaleString(
-        "pt-BR",
-        {
-            style: "currency",
-            currency: "BRL"
-        }
-    );
+    return Number(valor)
+        .toLocaleString(
+            "pt-BR",
+            {
+                style: "currency",
+                currency: "BRL"
+            }
+        );
 }
 
-function montarCidadeEstado(cidade, estado) {
-    const cidadeLimpa = String(cidade || "").trim();
-    const estadoLimpo = String(estado || "").trim();
+function montarCidadeEstado(
+    cidade,
+    estado
+) {
+    const cidadeLimpa =
+        String(
+            cidade || ""
+        ).trim();
+
+    const estadoLimpo =
+        String(
+            estado || ""
+        ).trim();
 
     if (!cidadeLimpa) {
         return "";
@@ -247,11 +686,15 @@ function montarCidadeEstado(cidade, estado) {
 }
 
 function separarCidadeEstado(valor) {
-    const texto = String(valor || "").trim();
+    const texto =
+        String(
+            valor || ""
+        ).trim();
 
-    const resultado = texto.match(
-        /^(.*?),\s*([A-Za-z]{2})$/
-    );
+    const resultado =
+        texto.match(
+            /^(.*?),\s*([A-Za-z]{2})$/
+        );
 
     if (!resultado) {
         return {
@@ -261,93 +704,176 @@ function separarCidadeEstado(valor) {
     }
 
     return {
-        cidade: resultado[1].trim(),
-        estado: resultado[2].toUpperCase()
+        cidade:
+            resultado[1].trim(),
+
+        estado:
+            resultado[2]
+                .toUpperCase()
     };
 }
 
 function normalizarStatus(status) {
-    return String(status || "")
+    return String(
+        status || ""
+    )
         .trim()
         .toUpperCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/\s+/g, "_");
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .replace(
+            /\s+/g,
+            "_"
+        );
 }
 
 function textoStatus(status) {
-    const statusNormalizado = normalizarStatus(status);
+    const statusNormalizado =
+        normalizarStatus(
+            status
+        );
 
     const textos = {
-        EM_ANALISE: "Em análise",
-        APROVADO: "Aprovado",
-        REPROVADO: "Reprovado",
-        CONTRATADO: "Contratado"
+        EM_ANALISE:
+            "Em análise",
+
+        APROVADO:
+            "Aprovado",
+
+        REPROVADO:
+            "Reprovado",
+
+        CONTRATADO:
+            "Contratado"
     };
 
-    return textos[statusNormalizado] || status || "--";
+    return (
+        textos[
+            statusNormalizado
+        ] ||
+        status ||
+        "--"
+    );
 }
 
 function classeStatus(status) {
-    const statusNormalizado = normalizarStatus(status);
+    const statusNormalizado =
+        normalizarStatus(
+            status
+        );
 
     const classes = {
-        EM_ANALISE: "status-em-analise",
-        APROVADO: "status-aprovado",
-        REPROVADO: "status-reprovado",
-        CONTRATADO: "status-contratado"
+        EM_ANALISE:
+            "status-em-analise",
+
+        APROVADO:
+            "status-aprovado",
+
+        REPROVADO:
+            "status-reprovado",
+
+        CONTRATADO:
+            "status-contratado"
     };
 
-    return classes[statusNormalizado] || "";
+    return (
+        classes[
+            statusNormalizado
+        ] || ""
+    );
 }
 
 function escaparHTML(valor) {
-    const elemento = document.createElement("div");
+    const elemento =
+        document.createElement(
+            "div"
+        );
 
-    elemento.textContent = valor ?? "";
+    elemento.textContent =
+        valor ?? "";
 
     return elemento.innerHTML;
 }
 
 function adicionarMascaras() {
-    novoCpf.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraCpf(event.target.value);
-    });
+    novoCpf.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraCpf(
+                    event.target.value
+                );
+        }
+    );
 
-    editarCpf.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraCpf(event.target.value);
-    });
+    editarCpf.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraCpf(
+                    event.target.value
+                );
+        }
+    );
 
-    novoTelefone.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraTelefone(event.target.value);
-    });
+    novoTelefone.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraTelefone(
+                    event.target.value
+                );
+        }
+    );
 
-    editarTelefone.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraTelefone(event.target.value);
-    });
+    editarTelefone.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraTelefone(
+                    event.target.value
+                );
+        }
+    );
 
-    novoSalario.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraMoeda(event.target.value);
-    });
+    novoSalario.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraMoeda(
+                    event.target.value
+                );
+        }
+    );
 
-    editarSalario.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraMoeda(event.target.value);
-    });
+    editarSalario.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraMoeda(
+                    event.target.value
+                );
+        }
+    );
 
-    rapidoSalario.addEventListener("input", event => {
-        event.target.value =
-            aplicarMascaraMoeda(event.target.value);
-    });
+    rapidoSalario.addEventListener(
+        "input",
+        event => {
+            event.target.value =
+                aplicarMascaraMoeda(
+                    event.target.value
+                );
+        }
+    );
 }
 
 function fecharPerfil() {
-    perfilContainer.classList.remove("aberto");
+    perfilContainer.classList.remove(
+        "aberto"
+    );
 
     botaoPerfil.setAttribute(
         "aria-expanded",
@@ -360,11 +886,19 @@ botaoPerfil.addEventListener(
     event => {
         event.stopPropagation();
 
-        perfilContainer.classList.toggle("aberto");
+        perfilContainer
+            .classList
+            .toggle(
+                "aberto"
+            );
 
         botaoPerfil.setAttribute(
             "aria-expanded",
-            perfilContainer.classList.contains("aberto")
+            perfilContainer
+                .classList
+                .contains(
+                    "aberto"
+                )
         );
     }
 );
@@ -376,52 +910,66 @@ perfilDropdown.addEventListener(
     }
 );
 
-botaoSair.addEventListener(
-    "click",
-    () => {
-        window.location.href = "./index.html";
-    }
-);
-
 function atualizarResumos() {
     resumoTodos.textContent =
-        candidatos.length || "--";
+        candidatos.length ||
+        "--";
 
-    const emAnalise = candidatos.filter(
-        candidato =>
-            normalizarStatus(candidato.status) ===
-            "EM_ANALISE"
-    ).length;
+    const emAnalise =
+        candidatos.filter(
+            candidato =>
+                normalizarStatus(
+                    candidato.status
+                ) ===
+                "EM_ANALISE"
+        ).length;
 
-    const aprovados = candidatos.filter(
-        candidato =>
-            normalizarStatus(candidato.status) ===
-            "APROVADO"
-    ).length;
+    const aprovados =
+        candidatos.filter(
+            candidato =>
+                normalizarStatus(
+                    candidato.status
+                ) ===
+                "APROVADO"
+        ).length;
 
-    const reprovados = candidatos.filter(
-        candidato =>
-            normalizarStatus(candidato.status) ===
-            "REPROVADO"
-    ).length;
+    const reprovados =
+        candidatos.filter(
+            candidato =>
+                normalizarStatus(
+                    candidato.status
+                ) ===
+                "REPROVADO"
+        ).length;
 
-    const contratados = candidatos.filter(
-        candidato =>
-            normalizarStatus(candidato.status) ===
-            "CONTRATADO"
-    ).length;
+    const contratados =
+        candidatos.filter(
+            candidato =>
+                normalizarStatus(
+                    candidato.status
+                ) ===
+                "CONTRATADO"
+        ).length;
 
     resumoAnalise.textContent =
-        candidatos.length ? emAnalise : "--";
+        candidatos.length
+            ? emAnalise
+            : "--";
 
     resumoAprovados.textContent =
-        candidatos.length ? aprovados : "--";
+        candidatos.length
+            ? aprovados
+            : "--";
 
     resumoReprovados.textContent =
-        candidatos.length ? reprovados : "--";
+        candidatos.length
+            ? reprovados
+            : "--";
 
     resumoContratados.textContent =
-        candidatos.length ? contratados : "--";
+        candidatos.length
+            ? contratados
+            : "--";
 }
 
 function preencherFiltro(
@@ -432,15 +980,25 @@ function preencherFiltro(
     select.innerHTML =
         `<option value="">${titulo}</option>`;
 
-    valores.forEach(valor => {
-        const option =
-            document.createElement("option");
+    valores.forEach(
+        valor => {
 
-        option.value = valor;
-        option.textContent = valor;
+            const option =
+                document.createElement(
+                    "option"
+                );
 
-        select.appendChild(option);
-    });
+            option.value =
+                valor;
+
+            option.textContent =
+                valor;
+
+            select.appendChild(
+                option
+            );
+        }
+    );
 }
 
 function atualizarFiltrosDinamicos() {
@@ -451,7 +1009,9 @@ function atualizarFiltrosDinamicos() {
                     candidato =>
                         candidato.departamento
                 )
-                .filter(Boolean)
+                .filter(
+                    Boolean
+                )
         )
     ].sort();
 
@@ -462,7 +1022,9 @@ function atualizarFiltrosDinamicos() {
                     candidato =>
                         candidato.cidade
                 )
-                .filter(Boolean)
+                .filter(
+                    Boolean
+                )
         )
     ].sort();
 
@@ -495,54 +1057,88 @@ function aplicarFiltros() {
         filtroCidade.value;
 
     candidatosFiltrados =
-        candidatos.filter(candidato => {
-            const correspondePesquisa =
-                !pesquisa ||
-                String(candidato.nome || "")
-                    .toLowerCase()
-                    .includes(pesquisa) ||
-                String(candidato.email || "")
-                    .toLowerCase()
-                    .includes(pesquisa) ||
-                String(candidato.cargo || "")
-                    .toLowerCase()
-                    .includes(pesquisa) ||
-                String(candidato.cpf || "")
-                    .toLowerCase()
-                    .includes(pesquisa);
+        candidatos.filter(
+            candidato => {
 
-            const correspondeStatus =
-                !status ||
-                normalizarStatus(
-                    candidato.status
-                ) === status;
+                const correspondePesquisa =
+                    !pesquisa ||
 
-            const correspondeDepartamento =
-                !departamento ||
-                candidato.departamento ===
-                    departamento;
+                    String(
+                        candidato.nome ||
+                        ""
+                    )
+                        .toLowerCase()
+                        .includes(
+                            pesquisa
+                        ) ||
 
-            const correspondeCidade =
-                !cidade ||
-                candidato.cidade === cidade;
+                    String(
+                        candidato.email ||
+                        ""
+                    )
+                        .toLowerCase()
+                        .includes(
+                            pesquisa
+                        ) ||
 
-            return (
-                correspondePesquisa &&
-                correspondeStatus &&
-                correspondeDepartamento &&
-                correspondeCidade
-            );
-        });
+                    String(
+                        candidato.cargo ||
+                        ""
+                    )
+                        .toLowerCase()
+                        .includes(
+                            pesquisa
+                        ) ||
 
-    paginaAtual = 1;
+                    String(
+                        candidato.cpf ||
+                        ""
+                    )
+                        .toLowerCase()
+                        .includes(
+                            pesquisa
+                        );
+
+                const correspondeStatus =
+                    !status ||
+                    normalizarStatus(
+                        candidato.status
+                    ) ===
+                    status;
+
+                const correspondeDepartamento =
+                    !departamento ||
+                    candidato.departamento ===
+                        departamento;
+
+                const correspondeCidade =
+                    !cidade ||
+                    candidato.cidade ===
+                        cidade;
+
+                return (
+                    correspondePesquisa &&
+                    correspondeStatus &&
+                    correspondeDepartamento &&
+                    correspondeCidade
+                );
+            }
+        );
+
+    paginaAtual =
+        1;
 
     renderizarTabela();
 }
 
 function renderizarTabela() {
-    corpoTabela.innerHTML = "";
+    corpoTabela.innerHTML =
+        "";
 
-    if (candidatosFiltrados.length === 0) {
+    if (
+        candidatosFiltrados.length ===
+        0
+    ) {
         candidatosVazio.classList.remove(
             "escondido"
         );
@@ -550,7 +1146,8 @@ function renderizarTabela() {
         textoPaginacao.textContent =
             "Nenhum candidato carregado";
 
-        paginaAtualElemento.textContent = "1";
+        paginaAtualElemento.textContent =
+            "1";
 
         return;
     }
@@ -568,16 +1165,22 @@ function renderizarTabela() {
             )
         );
 
-    if (paginaAtual > totalPaginas) {
-        paginaAtual = totalPaginas;
+    if (
+        paginaAtual > totalPaginas
+    ) {
+        paginaAtual =
+            totalPaginas;
     }
 
     const inicio =
-        (paginaAtual - 1) *
+        (
+            paginaAtual - 1
+        ) *
         candidatosPorPagina;
 
     const fim =
-        inicio + candidatosPorPagina;
+        inicio +
+        candidatosPorPagina;
 
     const candidatosPagina =
         candidatosFiltrados.slice(
@@ -587,8 +1190,11 @@ function renderizarTabela() {
 
     candidatosPagina.forEach(
         candidato => {
+
             const linha =
-                document.createElement("tr");
+                document.createElement(
+                    "tr"
+                );
 
             linha.innerHTML = `
                 <td>
@@ -659,7 +1265,9 @@ function renderizarTabela() {
                 </td>
             `;
 
-            corpoTabela.appendChild(linha);
+            corpoTabela.appendChild(
+                linha
+            );
         }
     );
 
@@ -674,9 +1282,11 @@ function renderizarTabela() {
 }
 
 function fecharMenuAcoes() {
-    menuAcoesFlutuante.classList.remove(
-        "aberto"
-    );
+    menuAcoesFlutuante
+        .classList
+        .remove(
+            "aberto"
+        );
 }
 
 function abrirMenuAcoes(
@@ -689,15 +1299,19 @@ function abrirMenuAcoes(
     const posicao =
         botao.getBoundingClientRect();
 
-    const larguraMenu = 200;
-    const alturaAproximada = 205;
+    const larguraMenu =
+        200;
+
+    const alturaAproximada =
+        205;
 
     let esquerda =
         posicao.right -
         larguraMenu;
 
     let topo =
-        posicao.bottom + 7;
+        posicao.bottom +
+        7;
 
     if (
         topo +
@@ -710,24 +1324,34 @@ function abrirMenuAcoes(
             7;
     }
 
-    if (esquerda < 10) {
-        esquerda = 10;
+    if (
+        esquerda < 10
+    ) {
+        esquerda =
+            10;
     }
 
-    menuAcoesFlutuante.style.left =
+    menuAcoesFlutuante
+        .style
+        .left =
         `${esquerda}px`;
 
-    menuAcoesFlutuante.style.top =
+    menuAcoesFlutuante
+        .style
+        .top =
         `${topo}px`;
 
-    menuAcoesFlutuante.classList.add(
-        "aberto"
-    );
+    menuAcoesFlutuante
+        .classList
+        .add(
+            "aberto"
+        );
 }
 
 corpoTabela.addEventListener(
     "click",
     event => {
+
         const botao =
             event.target.closest(
                 ".acao-menu-botao"
@@ -745,8 +1369,12 @@ corpoTabela.addEventListener(
         const candidato =
             candidatos.find(
                 item =>
-                    String(item.id) ===
-                    String(id)
+                    String(
+                        item.id
+                    ) ===
+                    String(
+                        id
+                    )
             );
 
         if (!candidato) {
@@ -763,6 +1391,7 @@ corpoTabela.addEventListener(
 menuAcoesFlutuante.addEventListener(
     "click",
     event => {
+
         event.stopPropagation();
 
         const botao =
@@ -779,23 +1408,33 @@ menuAcoesFlutuante.addEventListener(
         const acao =
             botao.dataset.acao;
 
-        if (acao === "detalhes") {
+        if (
+            acao === "detalhes"
+        ) {
             abrirDetalhes();
         }
 
-        if (acao === "editar") {
+        if (
+            acao === "editar"
+        ) {
             abrirEdicao();
         }
 
-        if (acao === "rapida") {
+        if (
+            acao === "rapida"
+        ) {
             abrirAtualizacaoRapida();
         }
 
-        if (acao === "curriculo") {
+        if (
+            acao === "curriculo"
+        ) {
             abrirCurriculo();
         }
 
-        if (acao === "excluir") {
+        if (
+            acao === "excluir"
+        ) {
             abrirExclusao();
         }
     }
@@ -808,8 +1447,23 @@ function abrirOverlay() {
 }
 
 function fecharComponentes() {
+    if (curriculoUrlAtual) {
+        URL.revokeObjectURL(
+            curriculoUrlAtual
+        );
+
+        curriculoUrlAtual =
+            null;
+    }
+
+    curriculoFrame.removeAttribute(
+        "src"
+    );
+
     document
-        .querySelectorAll(".drawer")
+        .querySelectorAll(
+            ".drawer"
+        )
         .forEach(
             drawer =>
                 drawer.classList.remove(
@@ -818,7 +1472,9 @@ function fecharComponentes() {
         );
 
     document
-        .querySelectorAll(".modal-central")
+        .querySelectorAll(
+            ".modal-central"
+        )
         .forEach(
             modal =>
                 modal.classList.remove(
@@ -858,21 +1514,28 @@ function abrirModal(modal) {
 botaoNovoCandidato.addEventListener(
     "click",
     () => {
+
         formNovoCandidato.reset();
 
-        arquivoNovo = null;
+        arquivoNovo =
+            null;
 
         arquivoNovoSelecionado.textContent =
             "";
 
-        abrirDrawer(drawerNovo);
+        abrirDrawer(
+            drawerNovo
+        );
     }
 );
 
 document
-    .querySelectorAll("[data-fechar]")
+    .querySelectorAll(
+        "[data-fechar]"
+    )
     .forEach(
         botao => {
+
             botao.addEventListener(
                 "click",
                 fecharComponentes
@@ -885,52 +1548,73 @@ overlayModal.addEventListener(
     fecharComponentes
 );
 
-function abrirDetalhes() {
+async function abrirDetalhes() {
+    const candidato =
+        await atualizarCandidatoSelecionado();
+
+    if (!candidato) {
+        return;
+    }
+
     document.getElementById(
         "detalheNome"
     ).textContent =
-        candidatoSelecionado.nome || "--";
+        candidato.nome ||
+        "--";
 
     document.getElementById(
         "detalheCargo"
     ).textContent =
-        candidatoSelecionado.cargo || "--";
+        candidato.cargo ||
+        "--";
 
     document.getElementById(
         "detalheCpf"
     ).textContent =
-        candidatoSelecionado.cpf || "--";
+        aplicarMascaraCpf(
+            candidato.cpf ||
+            ""
+        ) ||
+        "--";
 
     document.getElementById(
         "detalheEmail"
     ).textContent =
-        candidatoSelecionado.email || "--";
+        candidato.email ||
+        "--";
 
     document.getElementById(
         "detalheTelefone"
     ).textContent =
-        candidatoSelecionado.telefone || "--";
+        aplicarMascaraTelefone(
+            candidato.telefone ||
+            ""
+        ) ||
+        "--";
 
     document.getElementById(
         "detalheCidade"
     ).textContent =
-        candidatoSelecionado.cidade || "--";
+        candidato.cidade ||
+        "--";
 
     document.getElementById(
         "detalheCargoCompleto"
     ).textContent =
-        candidatoSelecionado.cargo || "--";
+        candidato.cargo ||
+        "--";
 
     document.getElementById(
         "detalheDepartamento"
     ).textContent =
-        candidatoSelecionado.departamento || "--";
+        candidato.departamento ||
+        "--";
 
     document.getElementById(
         "detalheSalario"
     ).textContent =
         formatarSalario(
-            candidatoSelecionado.salario
+            candidato.salario
         );
 
     const status =
@@ -940,18 +1624,17 @@ function abrirDetalhes() {
 
     status.textContent =
         textoStatus(
-            candidatoSelecionado.status
+            candidato.status
         );
 
     status.className =
         `status-badge ${classeStatus(
-            candidatoSelecionado.status
+            candidato.status
         )}`;
 
     document.getElementById(
         "nomeCurriculoDetalhes"
     ).textContent =
-        candidatoSelecionado.curriculoNome ||
         "Visualizar currículo";
 
     abrirDrawer(
@@ -959,30 +1642,41 @@ function abrirDetalhes() {
     );
 }
 
-function abrirEdicao() {
+async function abrirEdicao() {
+    const candidato =
+        await atualizarCandidatoSelecionado();
+
+    if (!candidato) {
+        return;
+    }
+
     const endereco =
         separarCidadeEstado(
-            candidatoSelecionado.cidade
+            candidato.cidade
         );
 
     document.getElementById(
         "editarNome"
     ).value =
-        candidatoSelecionado.nome || "";
+        candidato.nome ||
+        "";
 
     editarCpf.value =
         aplicarMascaraCpf(
-            candidatoSelecionado.cpf || ""
+            candidato.cpf ||
+            ""
         );
 
     document.getElementById(
         "editarEmail"
     ).value =
-        candidatoSelecionado.email || "";
+        candidato.email ||
+        "";
 
     editarTelefone.value =
         aplicarMascaraTelefone(
-            candidatoSelecionado.telefone || ""
+            candidato.telefone ||
+            ""
         );
 
     document.getElementById(
@@ -991,26 +1685,25 @@ function abrirEdicao() {
         endereco.cidade;
 
     editarEstado.value =
-        candidatoSelecionado.estado ||
         endereco.estado;
 
     document.getElementById(
         "editarCargo"
     ).value =
-        candidatoSelecionado.cargo || "";
+        candidato.cargo ||
+        "";
 
     document.getElementById(
         "editarDepartamento"
     ).value =
-        candidatoSelecionado.departamento || "";
+        candidato.departamento ||
+        "";
 
     editarSalario.value =
-        candidatoSelecionado.salario !==
-        undefined &&
-        candidatoSelecionado.salario !==
-        null
+        candidato.salario !== undefined &&
+        candidato.salario !== null
             ? formatarSalario(
-                candidatoSelecionado.salario
+                candidato.salario
             )
             : "";
 
@@ -1018,50 +1711,67 @@ function abrirEdicao() {
         "editarStatus"
     ).value =
         normalizarStatus(
-            candidatoSelecionado.status
-        ) || "EM_ANALISE";
+            candidato.status
+        ) ||
+        "EM_ANALISE";
+
+    arquivoEdicao =
+        null;
+
+    curriculoEditar.value =
+        "";
 
     document.getElementById(
         "arquivoEditarNome"
     ).textContent =
-        candidatoSelecionado.curriculoNome ||
-        "Nenhum currículo";
+        "Carregando currículo...";
 
-    arquivoEdicao = null;
+    abrirDrawer(
+        drawerEditar
+    );
 
-    abrirDrawer(drawerEditar);
+    await atualizarNomeCurriculoEdicao();
 }
 
-function abrirAtualizacaoRapida() {
+async function abrirAtualizacaoRapida() {
+    const candidato =
+        await atualizarCandidatoSelecionado();
+
+    if (!candidato) {
+        return;
+    }
+
     document.getElementById(
         "rapidoNome"
     ).textContent =
-        candidatoSelecionado.nome || "--";
+        candidato.nome ||
+        "--";
 
     document.getElementById(
         "rapidoCargoAtual"
     ).textContent =
-        candidatoSelecionado.cargo || "--";
+        candidato.cargo ||
+        "--";
 
     document.getElementById(
         "rapidoCargo"
     ).value =
-        candidatoSelecionado.cargo || "";
+        candidato.cargo ||
+        "";
 
     document.getElementById(
         "rapidoStatus"
     ).value =
         normalizarStatus(
-            candidatoSelecionado.status
-        ) || "EM_ANALISE";
+            candidato.status
+        ) ||
+        "EM_ANALISE";
 
     rapidoSalario.value =
-        candidatoSelecionado.salario !==
-        undefined &&
-        candidatoSelecionado.salario !==
-        null
+        candidato.salario !== undefined &&
+        candidato.salario !== null
             ? formatarSalario(
-                candidatoSelecionado.salario
+                candidato.salario
             )
             : "";
 
@@ -1070,16 +1780,12 @@ function abrirAtualizacaoRapida() {
     );
 }
 
-function abrirCurriculo() {
+async function abrirCurriculo() {
     fecharComponentes();
 
     const nome =
         candidatoSelecionado?.nome ||
         "Candidato";
-
-    const arquivo =
-        candidatoSelecionado?.curriculoNome ||
-        "curriculo.pdf";
 
     document.getElementById(
         "curriculoTitulo"
@@ -1089,20 +1795,47 @@ function abrirCurriculo() {
     document.getElementById(
         "curriculoNomeArquivo"
     ).textContent =
-        arquivo;
+        "Carregando...";
 
-    const url =
-        candidatoSelecionado?.curriculoUrl;
+    curriculoFrame.style.display =
+        "none";
 
-    if (url) {
-        curriculoFrame.src = url;
+    curriculoVazio.style.display =
+        "none";
+
+    try {
+        const curriculo =
+            await window.PicPayAPI
+                .buscarCurriculo(
+                    candidatoSelecionado.id
+                );
+
+        curriculoUrlAtual =
+            URL.createObjectURL(
+                curriculo.blob
+            );
+
+        document.getElementById(
+            "curriculoNomeArquivo"
+        ).textContent =
+            curriculo.nomeArquivo ||
+            "curriculo.pdf";
+
+        curriculoFrame.src =
+            curriculoUrlAtual;
 
         curriculoFrame.style.display =
             "block";
 
         curriculoVazio.style.display =
             "none";
-    } else {
+
+    } catch (erro) {
+        document.getElementById(
+            "curriculoNomeArquivo"
+        ).textContent =
+            "Nenhum currículo";
+
         curriculoFrame.removeAttribute(
             "src"
         );
@@ -1112,6 +1845,15 @@ function abrirCurriculo() {
 
         curriculoVazio.style.display =
             "flex";
+
+        if (
+            erro?.status !== 404
+        ) {
+            mostrarErroApi(
+                erro,
+                "Não foi possível abrir o currículo."
+            );
+        }
     }
 
     modalCurriculo.style.left =
@@ -1173,7 +1915,9 @@ function validarArquivoPdf(file) {
             "application/pdf" ||
         file.name
             .toLowerCase()
-            .endsWith(".pdf");
+            .endsWith(
+                ".pdf"
+            );
 
     if (!ehPdf) {
         return false;
@@ -1184,12 +1928,19 @@ function validarArquivoPdf(file) {
         1024 *
         1024;
 
-    return file.size <= limite;
+    return (
+        file.size <= limite
+    );
 }
 
 function selecionarArquivoNovo(file) {
-    if (!validarArquivoPdf(file)) {
-        arquivoNovo = null;
+    if (
+        !validarArquivoPdf(
+            file
+        )
+    ) {
+        arquivoNovo =
+            null;
 
         arquivoNovoSelecionado.textContent =
             "Selecione um PDF de até 10MB.";
@@ -1197,7 +1948,8 @@ function selecionarArquivoNovo(file) {
         return;
     }
 
-    arquivoNovo = file;
+    arquivoNovo =
+        file;
 
     arquivoNovoSelecionado.textContent =
         file.name;
@@ -1206,10 +1958,13 @@ function selecionarArquivoNovo(file) {
         const transferencia =
             new DataTransfer();
 
-        transferencia.items.add(file);
+        transferencia.items.add(
+            file
+        );
 
         curriculoNovo.files =
             transferencia.files;
+
     } catch {
     }
 }
@@ -1233,6 +1988,7 @@ curriculoNovo.addEventListener(
 areaUploadNovo.addEventListener(
     "dragover",
     event => {
+
         event.preventDefault();
 
         areaUploadNovo.classList.add(
@@ -1244,6 +2000,7 @@ areaUploadNovo.addEventListener(
 areaUploadNovo.addEventListener(
     "dragleave",
     () => {
+
         areaUploadNovo.classList.remove(
             "arrastando"
         );
@@ -1253,6 +2010,7 @@ areaUploadNovo.addEventListener(
 areaUploadNovo.addEventListener(
     "drop",
     event => {
+
         event.preventDefault();
 
         areaUploadNovo.classList.remove(
@@ -1260,7 +2018,9 @@ areaUploadNovo.addEventListener(
         );
 
         selecionarArquivoNovo(
-            event.dataTransfer.files[0]
+            event
+                .dataTransfer
+                .files[0]
         );
     }
 );
@@ -1275,14 +2035,20 @@ botaoSubstituirCurriculo.addEventListener(
 curriculoEditar.addEventListener(
     "change",
     () => {
+
         const file =
             curriculoEditar.files[0];
 
-        if (!validarArquivoPdf(file)) {
+        if (
+            !validarArquivoPdf(
+                file
+            )
+        ) {
             return;
         }
 
-        arquivoEdicao = file;
+        arquivoEdicao =
+            file;
 
         document.getElementById(
             "arquivoEditarNome"
@@ -1293,15 +2059,88 @@ curriculoEditar.addEventListener(
 
 removerCurriculoEditar.addEventListener(
     "click",
-    () => {
-        arquivoEdicao = null;
+    async () => {
 
-        curriculoEditar.value = "";
+        if (arquivoEdicao) {
+            arquivoEdicao =
+                null;
 
-        document.getElementById(
-            "arquivoEditarNome"
-        ).textContent =
-            "Nenhum currículo";
+            curriculoEditar.value =
+                "";
+
+            await atualizarNomeCurriculoEdicao();
+
+            return;
+        }
+
+        if (
+            !candidatoSelecionado?.id
+        ) {
+            return;
+        }
+
+        let confirmou =
+            true;
+
+        if (
+            window.picPayPeopleUI
+                ?.confirmarAcao
+        ) {
+            confirmou =
+                await window
+                    .picPayPeopleUI
+                    .confirmarAcao({
+                        titulo:
+                            "Remover currículo?",
+
+                        descricao:
+                            "O currículo atual será removido do candidato.",
+
+                        textoConfirmar:
+                            "Remover currículo",
+
+                        perigosa:
+                            true
+                    });
+        }
+
+        if (!confirmou) {
+            return;
+        }
+
+        try {
+            await window.PicPayAPI
+                .excluirCurriculo(
+                    candidatoSelecionado.id
+                );
+
+            document.getElementById(
+                "arquivoEditarNome"
+            ).textContent =
+                "Nenhum currículo";
+
+            notificar(
+                "Currículo removido",
+                "O currículo do candidato foi removido."
+            );
+
+        } catch (erro) {
+            if (
+                erro?.status === 404
+            ) {
+                document.getElementById(
+                    "arquivoEditarNome"
+                ).textContent =
+                    "Nenhum currículo";
+
+                return;
+            }
+
+            mostrarErroApi(
+                erro,
+                "Não foi possível remover o currículo."
+            );
+        }
     }
 );
 
@@ -1425,28 +2264,223 @@ function obterDadosPatch() {
 
 formNovoCandidato.addEventListener(
     "submit",
-    event => {
+    async event => {
+
         event.preventDefault();
 
-        obterDadosNovoCandidato();
+        const botao =
+            event.submitter ||
+            formNovoCandidato.querySelector(
+                'button[type="submit"]'
+            );
+
+        definirCarregamento(
+            botao,
+            true,
+            "Cadastrando..."
+        );
+
+        try {
+            const dados =
+                obterDadosNovoCandidato();
+
+            const criado =
+                await window.PicPayAPI
+                    .criarFuncionario(
+                        dados
+                    );
+
+            notificar(
+                "Candidato adicionado",
+                `${criado.nome} foi adicionado ao processo seletivo.`
+            );
+
+            if (arquivoNovo) {
+                try {
+                    await window.PicPayAPI
+                        .enviarCurriculo(
+                            criado.id,
+                            arquivoNovo
+                        );
+
+                    notificar(
+                        "Currículo adicionado",
+                        `O currículo de ${criado.nome} foi adicionado.`
+                    );
+
+                } catch (erroCurriculo) {
+                    mostrarErroApi(
+                        erroCurriculo,
+                        "O candidato foi criado, mas não foi possível enviar o currículo."
+                    );
+                }
+            }
+
+            formNovoCandidato.reset();
+
+            arquivoNovo =
+                null;
+
+            arquivoNovoSelecionado.textContent =
+                "";
+
+            fecharComponentes();
+
+            await carregarCandidatos();
+
+        } catch (erro) {
+            mostrarErroApi(
+                erro,
+                "Não foi possível cadastrar o candidato."
+            );
+
+        } finally {
+            definirCarregamento(
+                botao,
+                false,
+                "Cadastrando..."
+            );
+        }
     }
 );
 
 formEditarCandidato.addEventListener(
     "submit",
-    event => {
+    async event => {
+
         event.preventDefault();
 
-        obterDadosEdicao();
+        if (
+            !candidatoSelecionado?.id
+        ) {
+            return;
+        }
+
+        const botao =
+            event.submitter ||
+            formEditarCandidato.querySelector(
+                'button[type="submit"]'
+            );
+
+        definirCarregamento(
+            botao,
+            true,
+            "Salvando..."
+        );
+
+        try {
+            const dados =
+                obterDadosEdicao();
+
+            const id =
+                dados.id;
+
+            delete dados.id;
+
+            const atualizado =
+                await window.PicPayAPI
+                    .atualizarFuncionario(
+                        id,
+                        dados
+                    );
+
+            candidatoSelecionado =
+                atualizado;
+
+            notificar(
+                "Cadastro atualizado",
+                `Os dados de ${atualizado.nome} foram atualizados.`
+            );
+
+            try {
+                await salvarCurriculoEdicao(
+                    id
+                );
+
+            } catch (erroCurriculo) {
+                mostrarErroApi(
+                    erroCurriculo,
+                    "Os dados foram atualizados, mas não foi possível salvar o currículo."
+                );
+            }
+
+            fecharComponentes();
+
+            await carregarCandidatos();
+
+        } catch (erro) {
+            mostrarErroApi(
+                erro,
+                "Não foi possível atualizar o candidato."
+            );
+
+        } finally {
+            definirCarregamento(
+                botao,
+                false,
+                "Salvando..."
+            );
+        }
     }
 );
 
 formAtualizacaoRapida.addEventListener(
     "submit",
-    event => {
+    async event => {
+
         event.preventDefault();
 
-        obterDadosPatch();
+        if (
+            !candidatoSelecionado?.id
+        ) {
+            return;
+        }
+
+        const botao =
+            event.submitter ||
+            formAtualizacaoRapida.querySelector(
+                'button[type="submit"]'
+            );
+
+        definirCarregamento(
+            botao,
+            true,
+            "Atualizando..."
+        );
+
+        try {
+            const atualizado =
+                await window.PicPayAPI
+                    .atualizarFuncionarioParcial(
+                        candidatoSelecionado.id,
+                        obterDadosPatch()
+                    );
+
+            candidatoSelecionado =
+                atualizado;
+
+            notificar(
+                "Candidato atualizado",
+                `${atualizado.nome} recebeu uma atualização rápida.`
+            );
+
+            fecharComponentes();
+
+            await carregarCandidatos();
+
+        } catch (erro) {
+            mostrarErroApi(
+                erro,
+                "Não foi possível atualizar o candidato."
+            );
+
+        } finally {
+            definirCarregamento(
+                botao,
+                false,
+                "Atualizando..."
+            );
+        }
     }
 );
 
@@ -1454,7 +2488,58 @@ document.getElementById(
     "confirmarExclusao"
 ).addEventListener(
     "click",
-    () => {
+    async event => {
+
+        if (
+            !candidatoSelecionado?.id
+        ) {
+            return;
+        }
+
+        const botao =
+            event.currentTarget;
+
+        definirCarregamento(
+            botao,
+            true,
+            "Excluindo..."
+        );
+
+        try {
+            const nome =
+                candidatoSelecionado.nome ||
+                "Candidato";
+
+            await window.PicPayAPI
+                .excluirFuncionario(
+                    candidatoSelecionado.id
+                );
+
+            notificar(
+                "Candidato removido",
+                `${nome} foi removido do processo seletivo.`
+            );
+
+            candidatoSelecionado =
+                null;
+
+            fecharComponentes();
+
+            await carregarCandidatos();
+
+        } catch (erro) {
+            mostrarErroApi(
+                erro,
+                "Não foi possível excluir o candidato."
+            );
+
+        } finally {
+            definirCarregamento(
+                botao,
+                false,
+                "Excluindo..."
+            );
+        }
     }
 );
 
@@ -1481,10 +2566,18 @@ filtroCidade.addEventListener(
 botaoLimparFiltros.addEventListener(
     "click",
     () => {
-        campoPesquisa.value = "";
-        filtroStatus.value = "";
-        filtroDepartamento.value = "";
-        filtroCidade.value = "";
+
+        campoPesquisa.value =
+            "";
+
+        filtroStatus.value =
+            "";
+
+        filtroDepartamento.value =
+            "";
+
+        filtroCidade.value =
+            "";
 
         document
             .querySelectorAll(
@@ -1515,9 +2608,11 @@ document
     )
     .forEach(
         botao => {
+
             botao.addEventListener(
                 "click",
                 () => {
+
                     document
                         .querySelectorAll(
                             ".resumo-item"
@@ -1534,7 +2629,8 @@ document
                     );
 
                     filtroStatus.value =
-                        botao.dataset
+                        botao
+                            .dataset
                             .resumoStatus;
 
                     aplicarFiltros();
@@ -1546,7 +2642,10 @@ document
 paginaAnterior.addEventListener(
     "click",
     () => {
-        if (paginaAtual <= 1) {
+
+        if (
+            paginaAtual <= 1
+        ) {
             return;
         }
 
@@ -1559,6 +2658,7 @@ paginaAnterior.addEventListener(
 proximaPagina.addEventListener(
     "click",
     () => {
+
         const totalPaginas =
             Math.ceil(
                 candidatosFiltrados.length /
@@ -1566,8 +2666,7 @@ proximaPagina.addEventListener(
             );
 
         if (
-            paginaAtual >=
-            totalPaginas
+            paginaAtual >= totalPaginas
         ) {
             return;
         }
@@ -1578,15 +2677,25 @@ proximaPagina.addEventListener(
     }
 );
 
-let arrastandoCurriculo = false;
-let inicioMouseX = 0;
-let inicioMouseY = 0;
-let inicioModalX = 0;
-let inicioModalY = 0;
+let arrastandoCurriculo =
+    false;
+
+let inicioMouseX =
+    0;
+
+let inicioMouseY =
+    0;
+
+let inicioModalX =
+    0;
+
+let inicioModalY =
+    0;
 
 curriculoCabecalho.addEventListener(
     "mousedown",
     event => {
+
         if (
             event.target.closest(
                 "button"
@@ -1608,7 +2717,8 @@ curriculoCabecalho.addEventListener(
         modalCurriculo.style.top =
             `${rect.top}px`;
 
-        arrastandoCurriculo = true;
+        arrastandoCurriculo =
+            true;
 
         inicioMouseX =
             event.clientX;
@@ -1627,7 +2737,10 @@ curriculoCabecalho.addEventListener(
 document.addEventListener(
     "mousemove",
     event => {
-        if (!arrastandoCurriculo) {
+
+        if (
+            !arrastandoCurriculo
+        ) {
             return;
         }
 
@@ -1640,54 +2753,95 @@ document.addEventListener(
             inicioMouseY;
 
         modalCurriculo.style.left =
-            `${
-                inicioModalX +
-                diferencaX
-            }px`;
+            `${inicioModalX + diferencaX}px`;
 
         modalCurriculo.style.top =
-            `${
-                inicioModalY +
-                diferencaY
-            }px`;
+            `${inicioModalY + diferencaY}px`;
     }
 );
 
-document.addEventListener("mouseup", () => {
-        arrastandoCurriculo = false;
+document.addEventListener(
+    "mouseup",
+    () => {
+        arrastandoCurriculo =
+            false;
     }
 );
 
-document.addEventListener("click", event => {
-        if (!event.target.closest(".acao-menu-botao") && !event.target.closest("#menuAcoesFlutuante")) {
+document.addEventListener(
+    "click",
+    event => {
+
+        if (
+            !event.target.closest(
+                ".acao-menu-botao"
+            ) &&
+            !event.target.closest(
+                "#menuAcoesFlutuante"
+            )
+        ) {
             fecharMenuAcoes();
         }
 
-        if (!event.target.closest(".perfil-container")) {
+        if (
+            !event.target.closest(
+                ".perfil-container"
+            )
+        ) {
             fecharPerfil();
         }
     }
 );
 
-document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
             fecharMenuAcoes();
+
             fecharPerfil();
+
             fecharComponentes();
         }
     }
 );
 
-window.addEventListener("resize", fecharMenuAcoes);
+window.addEventListener(
+    "resize",
+    fecharMenuAcoes
+);
 
-document.querySelector(".principal").addEventListener("scroll", fecharMenuAcoes);
+document
+    .querySelector(
+        ".principal"
+    )
+    .addEventListener(
+        "scroll",
+        fecharMenuAcoes
+    );
 
-window.definirCandidatos = lista => {
-        candidatos = Array.isArray(lista) ? lista : [];
-        candidatosFiltrados = [...candidatos];
+window.definirCandidatos =
+    lista => {
+
+        candidatos =
+            Array.isArray(
+                lista
+            )
+                ? lista
+                : [];
+
+        candidatosFiltrados = [
+            ...candidatos
+        ];
 
         atualizarResumos();
+
         atualizarFiltrosDinamicos();
+
         aplicarFiltros();
     };
 
@@ -1709,18 +2863,40 @@ window.picPayPeopleForms = {
     }
 };
 
-const parametros = new URLSearchParams(window.location.search);
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
 
-preencherEstados(novoEstado);
-preencherEstados(editarEstado);
+preencherEstados(
+    novoEstado
+);
+
+preencherEstados(
+    editarEstado
+);
 
 adicionarMascaras();
 
 atualizarSaudacao();
+
 atualizarResumos();
+
 atualizarFiltrosDinamicos();
+
 aplicarFiltros();
 
-if (parametros.get("acao") ==="novo") {
-    setTimeout(() => {botaoNovoCandidato.click();}, 100);
+carregarCandidatos();
+
+if (
+    parametros.get(
+        "acao"
+    ) === "novo"
+) {
+    setTimeout(
+        () => {
+            botaoNovoCandidato.click();
+        },
+        100
+    );
 }
